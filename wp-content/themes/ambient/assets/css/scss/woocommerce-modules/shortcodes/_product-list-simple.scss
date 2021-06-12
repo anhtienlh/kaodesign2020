@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Product List - Simple shortcode styles - begin
+   ========================================================================== */
+
+.eltdf-pls-holder {
+	@include eltdfRelativeHolderLayout();
+
+	> ul {
+		@include eltdfRelativeHolderLayout();
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		> li {
+			@include eltdfRelativeHolderLayout();
+			padding: 0;
+			margin: 0 0 20px;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+	
+	.eltdf-pls-image {
+		display: table-cell;
+		vertical-align: top;
+		width: 84px;
+
+		a, img {
+			display: block;
+		}
+
+		a {
+			position: relative;
+
+			&:after {
+				content:'';
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background-color: rgba($default-heading-color, .2);
+				opacity: 0;
+				@include eltdfTransition(opacity .6s)
+			}
+
+			&:hover {
+				
+				&:after {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	.eltdf-pls-text {
+		display: table-cell;
+		vertical-align: top;
+		padding: 0 0 0 20px;
+		
+		.eltdf-pls-title {
+			margin: 0;
+		}
+		
+		.eltdf-pls-rating-holder {
+			@include eltdfRelativeHolderLayout();
+			line-height: 1;
+			margin: 10px 0 3px;
+		}
+		
+		.eltdf-pls-rating {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			font-family: "ElegantIcons";
+			font-size: 12px;
+			line-height: 1;
+			letter-spacing: 6px;
+			color: $default-text-color;
+			overflow: hidden;
+			-webkit-font-smoothing: antialiased;
+			
+			&:before {
+				content: "\e031\e031\e031\e031\e031";
+			}
+			
+			span {
+				position: absolute;
+				top: 0;
+				left: 0;
+				overflow: hidden;
+				color: $default-heading-color;
+				
+				&:before {
+					content: "\e031\e031\e031\e031\e031";
+				}
+			}
+		}
+		
+		.eltdf-pls-price {
+			display: block;
+			line-height: 1;
+			margin: 16px 0 0;
+			color: $default-heading-color;
+			font-size: 15px;
+			font-weight: 600;
+			
+			* {
+				font-size: inherit;
+				line-height: inherit;
+			}
+			
+			del {
+				color: $additional-text-color;
+				margin: 0 3px 0 0;
+			}
+			
+			ins {
+				text-decoration: none;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Product List - Simple shortcode styles - end
+   ========================================================================== */

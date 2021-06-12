@@ -1,0 +1,44 @@
+/* ==========================================================================
+   WooCommerce Track Order page styles - begin
+   ========================================================================== */
+
+.eltdf-woocommerce-page.eltdf-woocommerce-order-tracking {
+    
+    .woocommerce {
+        margin: 0 0 45px;
+        
+        > .track_order {
+            display: block;
+            margin: 0 0 60px;
+            
+            > p:not(.form-row) {
+                display: block;
+                margin: 0 0 7px;
+            }
+            
+            .form-row-first,
+            .form-row-last {
+                @include eltdfRelativeHolderLayout();
+                margin: 0;
+                
+                label {
+                    display: block;
+                    margin: 14px 0;
+                    color: $default-heading-color;
+                    font-size: 12px;
+                    line-height: 26px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+	                text-transform: uppercase;
+                }
+            }
+            
+            .button {
+                margin: 13px 0 0;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Track Order page styles - end
+   ========================================================================== */

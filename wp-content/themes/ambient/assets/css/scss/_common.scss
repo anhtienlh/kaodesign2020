@@ -1,0 +1,741 @@
+@import 'variables';
+@import 'mixins';
+
+/* ==========================================================================
+   #Content bottom styles - start
+   ========================================================================== */
+.eltdf-content-bottom {
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.eltdf-container {
+		background-color: transparent;
+	}
+}
+
+/* ==========================================================================
+   #Content bottom styles - start
+   ========================================================================== */
+
+/* ==========================================================================
+   #Comments styles - start
+   ========================================================================== */
+
+.eltdf-comment-holder {
+	@include eltdfRelativeHolderLayout();
+	padding: 0;
+	@include eltdfBoxSizing(border-box);
+
+	.eltdf-comment-holder-inner {
+		padding: 41px 0 20px;
+	}
+
+	.eltdf-comment {
+
+		&.eltdf-pingback-comment {
+
+			.eltdf-comment-text {
+				padding: 0;
+			}
+		}
+	}
+
+	.eltdf-comment-list {
+		list-style: none;
+		position: relative;
+		z-index: 150;
+		padding: 0;
+		margin: 0;
+
+		& > li, ul.children > li {
+			@include eltdfRelativeHolderLayout();
+			margin: 25px 0 0;
+			padding: 29px 0 0;
+		}
+
+		> li:first-child {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+
+		.children {
+			padding: 0 0 0 81px;
+		}
+	}
+
+	.eltdf-comments-title {
+		margin-bottom: 30px;
+
+		> * {
+			margin: 0;
+		}
+	}
+
+	.eltdf-comment-image {
+		position: relative;
+		display: block;
+		top: 10px;
+		left: 0;
+		width: 82px;
+		height: 82px;
+		float: left;
+
+		img {
+			display: block;
+			border-radius: 4em;
+		}
+	}
+
+	.eltdf-comment-text {
+		padding: 0 0 0 108px;
+		min-height: 82px;
+
+		.eltdf-comment-info {
+			@include eltdfRelativeHolderLayout();
+			margin: -2px 0 7px;
+		}
+
+		.replay,
+		.comment-reply-link,
+		.comment-edit-link {
+			float: right;
+			margin-left: 10px;
+			font-family: $first-main-font;
+			font-weight: 400;
+			font-size: 12px;
+			text-transform: uppercase;
+			color: #b4b4b4;
+
+			&:hover {
+				color: $default-heading-color;
+			}
+		}
+
+		.eltdf-comment-name {
+			float: left;
+			margin: 0;
+		}
+
+		.eltdf-comment-date {
+			float: left;
+			margin: 0;
+			font-family: $first-main-font;
+			font-weight: 400;
+			font-size: 12px;
+			text-transform: uppercase;
+			color: #b4b4b4;
+		}
+
+		.eltdf-text-holder p {
+			margin: 7px 0;
+		}
+
+		.comment-respond {
+			margin: 20px 0;
+
+			.comment-reply-title {
+				margin: 0 0 10px;
+				font-size: 14px;
+				font-weight: 400;
+			}
+
+			.logged-in-as {
+				margin: 0 0 8px;
+			}
+		}
+
+		#cancel-comment-reply-link {
+			margin-left: 10px;
+			font-family: $first-main-font;
+			font-weight: 400;
+			font-size: 12px;
+			font-style: italic;
+			color: $first-main-color;
+
+			&:hover {
+				color: $default-heading-color;
+			}
+		}
+
+		li {
+			margin: 0 !important;
+			padding: 0 !important;
+			border: 0 !important;
+		}
+	}
+}
+
+.eltdf-comment-form {
+	padding: 0;
+	clear: both;
+	@include eltdfBoxSizing(border-box);
+
+	.eltdf-comment-form-inner {
+		padding: 45px 0 78px;
+	}
+
+	.comment-reply-title {
+		margin: 0 0 37px;
+	}
+
+	.logged-in-as {
+		margin: 0 0 8px;
+	}
+}
+
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+%input-style {
+	width: 100%;
+	margin: 0 0 15px;
+	padding: 13px 24px;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: 1.5em;
+	font-weight: inherit;
+	color: $default-heading-color;
+	background-color: transparent;
+	border: 1px solid $default-border-color;
+	border-radius: 0;
+	outline: 0;
+	-webkit-appearance: none;
+	@include eltdfBoxSizing(border-box);
+	@include eltdfTransition(border-color 0.2s ease-in-out);
+
+	&:focus {
+		border-color: $default-text-color;
+	}
+
+	::-webkit-input-placeholder {
+		color: $default-text-color;
+	}
+
+	:-moz-placeholder {
+		color: $default-text-color;
+	}
+
+	::-moz-placeholder {
+		color: $default-text-color;
+	}
+
+	:-ms-input-placeholder {
+		color: $default-text-color;
+	}
+}
+
+#respond textarea,
+#respond input[type='text'],
+.post-password-form input[type='password'] {
+	@extend %input-style;
+}
+
+#respond textarea {
+	display: block;
+	padding: 17px 24px;
+}
+
+p.form-submit {
+	margin: 0;
+}
+
+#submit_comment,
+.post-password-form input[type='submit'] {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	padding: 16px 43px;
+	font-family: inherit;
+	font-size: 13px;
+	line-height: 19px;
+	letter-spacing: 0.5px;
+	font-weight: 400;
+	font-family: $first-main-font;
+	color: #fff;
+	background-color: $first-main-color;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	@include eltdfTransition(color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out);
+	@include eltdfBoxSizing(border-box);
+
+	&:hover {
+		background-color: $default-heading-color;
+	}
+}
+
+%cf7-input-style {
+	width: 100%;
+	margin: 0 0 15px;
+	padding: 13px 24px;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: 1.5em;
+	font-weight: inherit;
+	color: $default-heading-color;
+	background-color: transparent;
+	border: 1px solid $default-border-color;
+	border-radius: 0;
+	outline: 0;
+	-webkit-appearance: none;
+	@include eltdfBoxSizing(border-box);
+	@include eltdfTransition(border-color 0.2s ease-in-out);
+
+	&:focus {
+		border-color: $default-text-color;
+	}
+
+	&::-webkit-input-placeholder {
+		color: $default-text-color;
+	}
+
+	&:-moz-placeholder {
+		color: $default-text-color;
+	}
+
+	&::-moz-placeholder {
+		color: $default-text-color;
+	}
+
+	&:-ms-input-placeholder {
+		color: $default-text-color;
+	}
+}
+
+.wpcf7-form-control {
+	&.wpcf7-text,
+	&.wpcf7-number,
+	&.wpcf7-date,
+	&.wpcf7-textarea,
+	&.wpcf7-select,
+	&.wpcf7-quiz {
+		@extend %cf7-input-style;
+
+		footer & {
+			margin: 0;
+		}
+	}
+}
+
+input.wpcf7-form-control.wpcf7-submit {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	padding: 17px 46px;
+	font-family: $first-main-font;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 1px;
+	font-weight: 600;
+	color: #fff;
+	background-color: $first-main-color;
+	border: none;
+	border-radius: 0;
+	cursor: pointer;
+	@include eltdfTransition(color .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out);
+	@include eltdfBoxSizing(border-box);
+
+	&:hover {
+		background-color: $default-heading-color;
+	}
+}
+
+.wpcf7-form p {
+	margin: 0;
+}
+
+.wpcf7-form textarea {
+	vertical-align: middle;
+}
+
+.eltdf-two-columns-form-without-space {
+
+	.wpcf7-form .ajax-loader {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Pagination styles - start
+   ========================================================================== */
+
+.eltdf-pagination-new-holder {
+	display: none !important;
+}
+
+.eltdf-pagination {
+	@include eltdfRelativeHolderLayout();
+	margin: 20px 0 54px;
+	clear: both;
+
+	ul {
+		@include eltdfRelativeHolderLayout();
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		list-style: none;
+
+		li {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 3px;
+
+			a,
+			&.active span {
+				position: relative;
+				display: inline-block;
+				margin: 0;
+				padding: 0;
+				vertical-align: middle;
+				text-decoration: none;
+				cursor: pointer;
+				white-space: nowrap;
+				font-size: 21px;
+				font-weight: 300;
+				font-family: $first-main-font;
+				letter-spacing: 1px;
+				color: $default-text-color;
+				@include eltdfTransition(color 0.2s ease-out);
+			}
+
+			&.eltdf-pagination-prev,
+			&.eltdf-pagination-next,
+			&.eltdf-pagination-first-page,
+			&.eltdf-pagination-last-page {
+				margin: 0 6px;
+
+				a {
+					font-size: 13px;
+					text-transform: uppercase;
+
+					span {
+						display: inline-block;
+						vertical-align: middle;
+					}
+
+					i {
+						position: relative;
+						display: inline-block;
+						vertical-align: middle;
+						line-height: inherit;
+						font-size: 30px;
+
+						&:before {
+							display: block;
+							line-height: inherit;
+						}
+					}
+				}
+			}
+
+			&.eltdf-pagination-prev {
+				float: left;
+
+				i {
+					padding: 0 15px 0 0;
+				}
+			}
+
+			&.eltdf-pagination-next {
+				float: right;
+
+				i {
+					padding: 0 0 0 15px;
+				}
+			}
+
+			a:hover,
+			&.active span {
+				color: $first-main-color;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   #Pagination styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Owl Slider (Blog list and single, Portfolio single) - begin
+   ========================================================================== */
+.eltdf-owl-slider {
+
+	.owl-stage-outer {
+		z-index: 1;
+	}
+
+	.owl-nav {
+
+		.owl-prev,
+		.owl-next {
+			position: absolute;
+			top: 50%;
+			z-index: 3;
+			@include eltdfTransform(translateY(-50%));
+
+			&:hover {
+
+				.eltdf-prev-icon,
+				.eltdf-next-icon {
+					color: $first-main-color;
+				}
+			}
+		}
+
+		.owl-prev {
+			left: 50px;
+		}
+
+		.owl-next {
+			right: 50px;
+		}
+
+		.eltdf-prev-icon,
+		.eltdf-next-icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			color: $default-heading-color;
+			@include eltdfTransition(color .2s ease-out);
+
+			.eltdf-icon-arrow {
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				font-size: 40px;
+				line-height: 1em;
+
+				&:before {
+					position: relative;
+					display: inline-block;
+					vertical-align: top;
+					line-height: inherit;
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   #Owl Slider (Blog list and single, Portfolio single) - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #404 styles - start
+   ========================================================================== */
+
+body.error404 {
+
+	.eltdf-page-header,
+	.eltdf-top-bar,
+	.eltdf-mobile-header {
+		display: none !important;
+	}
+
+	&.eltdf-wrapper {
+		padding: 0 !important;
+	}
+
+	.eltdf-content {
+		margin-top: 0 !important;
+		background-image: url('img/404.jpg');
+		background-position: center 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+
+	h5.eltdf-page-not-found-text {
+		color: #fff;
+		margin: 25px 0 21px;
+		font-weight: 500;
+	}
+
+	.eltdf-404-logo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 50px 0 0;
+		}
+
+		img {
+			display: block;
+			height: 100%;
+			margin: 0 auto;
+		}
+	}
+
+	.eltdf-content-inner {
+		height: 100%;
+	}
+
+	.eltdf-404-background {
+		position: relative;
+		display: table;
+		height: 100%;
+		width: 100%;
+	}
+
+	.eltdf-page-not-found {
+		position: relative;
+		display: table-cell;
+		width: 100%;
+		height: 100%;
+		vertical-align: bottom;
+		padding: 0 33% 9%;
+		text-align: center;
+
+		@include laptop-landscape-large {
+			padding: 0 25% 9%;
+		}
+
+		@include laptop-landscape-medium {
+			padding: 0 25% 6%;
+		}
+
+		@include ipad-landscape {
+			padding: 0 10% 12%;
+		}
+
+		@media (max-width: 1024px) and (orientation: portrait) {
+			padding: 0 5% 26%;
+		}
+
+		@media (max-width: 768px) and (orientation: portrait) {
+			padding: 0 5% 26%;
+		}
+
+		h1 {
+			margin: 0 0 -5px;
+			color: #fff;
+			font-weight: 300;
+
+			@include phone-portrait {
+				font-size: 50px;
+				line-height: 1.3em;
+			}
+		}
+
+		h3 {
+			margin: 14px 0 9px;
+		}
+
+		.eltdf-btn {
+			margin: 21px 0 0;
+		}
+	}
+
+	.eltdf-btn.eltdf-btn-light {
+		color: #fff;
+		border-color: #fff;
+	}
+}
+
+/* ==========================================================================
+   #404 styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+#eltdf-back-to-top {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	right: 30px;
+	bottom: 12px;
+	margin: 0;
+	z-index: 10000;
+	backface-visibility: hidden;
+	@include eltdfTransform(scaleX(0));
+	@include eltdfTransition(transform .3s);
+
+	.eltdf-icon-stack {
+		display: none;
+	}
+
+	&.off {
+		@include eltdfTransform(scaleX(0));
+		@include eltdfTransition(transform .3s);
+
+		&:hover {
+			&:before,
+			&:after {
+				@include eltdfTransform(none);
+			}
+
+		}
+	}
+
+	&.on {
+		@include eltdfTransform(scaleX(1));
+		@include eltdfTransition(transform .3s);
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 50%;
+		margin-top: -1px;
+		width: 20px;
+		height: 2px;
+		background-color: #808285;
+		@include eltdfTransformOrigin(21px 0);
+		@include eltdfTransition(transform .2s, backgroun-color 0.15s ease-out);
+	}
+
+	&:after {
+		left: 20px;
+		@include eltdfTransformOrigin(3px 0);
+	}
+
+	&:hover {
+		&:before {
+			@include eltdfTransform(translate(2px, -15px) rotate(-40deg));
+			background-color: $first-main-color;
+		}
+		&:after {
+			@include eltdfTransform(translate(2px, -12px) rotate(40deg));
+			background-color: $first-main-color;
+		}
+	}
+}
+
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Self Hosted Video styles - begin
+   ========================================================================== */
+.eltdf-self-hosted-video-holder {
+	.eltdf-video-wrap {
+		.mejs-container,
+		.mejs-overlay-play {
+			height: 100% !important; /*!important because of the inline style*/
+			width: 100% !important; /*!important because of the inline style*/
+		}
+	}
+}
+
+/* ==========================================================================
+   #Self Hosted Video styles - end
+   ========================================================================== */

@@ -1,0 +1,549 @@
+/* ==========================================================================
+# Search template style - begin
+========================================================================== */
+
+.search .eltdf-content .eltdf-content-inner > .eltdf-container > .eltdf-container-inner {
+    padding: 66px 0 0;
+}
+
+.eltdf-search-page-holder {
+    @include eltdfRelativeHolderLayout();
+
+    .eltdf-search-page-form {
+        @include eltdfRelativeHolderLayout();
+        margin: 0 0 60px;
+
+        .eltdf-search-title {
+            margin: 0 0 34px;
+        }
+
+        .eltdf-search-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 300;
+        }
+
+        .eltdf-form-holder {
+            @include eltdfRelativeHolderLayout();
+            margin: 0 0 17px;
+            clear: both;
+            border-width: 2px;
+            border-style: solid;
+            border-color: $default-border-color;
+            border-radius: 5em;
+            @include eltdfBoxSizing(border-box);
+
+            .eltdf-column-left {
+                display: table-cell;
+                vertical-align: top;
+            }
+
+            .eltdf-column-right {
+                display: table-cell;
+                width: 1%;
+                text-align: left;
+                vertical-align: top;
+            }
+
+            .eltdf-search-field,
+            .eltdf-search-submit {
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+                float: left;
+                height: 52px;
+                font-family: $first-main-font;
+                font-weight: 400;
+                font-size: 13px;
+                font-style: italic;
+                line-height: 50px;
+                color: $default-text-color;
+                background-color: transparent;
+                border: 0;
+                border-radius: 0;
+                outline: 0;
+                -webkit-appearance: none;
+                @include eltdfBoxSizing(border-box);
+                @include eltdfTransition(color .2s ease-out);
+            }
+
+            .eltdf-search-field {
+                width: calc(100% - 50px);
+                padding: 0 0 0 31px;
+
+                &::-webkit-input-placeholder {
+                    color: $default-text-color;
+                }
+                &:-moz-placeholder {
+                    color: $default-text-color;
+                }
+                &::-moz-placeholder {
+                    color: $default-text-color;
+                }
+                &:-ms-input-placeholder {
+                    color: $default-text-color;
+                }
+            }
+
+            .eltdf-search-submit {
+                width: 50px;
+                padding: 0 23px 0 9px;
+                font-size: 18px;
+                cursor: pointer;
+                color: $default-text-color;
+                @include eltdfTransition(color .2s ease-in-out);
+
+                &:hover {
+                    color: $first-main-color;
+                }
+
+                span {
+                    display: block;
+                    line-height: inherit;
+
+                    &:before {
+                        display: block;
+                        line-height: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+    article {
+        @include eltdfRelativeHolderLayout();
+        padding: 0;
+        margin: 0 0 31px;
+
+        &.sticky {
+            .eltdf-post-title-area h3 a {
+                color: $first-main-color;
+            }
+        }
+
+        &.page {
+            .eltdf-post-title-area .eltdf-post-info > div.eltdf-post-info-category {
+                display: none;
+            }
+        }
+
+        .eltdf-post-content {
+            @include eltdfRelativeHolderLayout();
+        }
+
+        .eltdf-post-image {
+            display: block;
+            float: left;
+            width: 130px;
+            margin: 8px 0 0;
+
+            a, img {
+                display: block;
+            }
+        }
+
+        .eltdf-post-title-area {
+            height: 130px;
+            padding: 0 0 0 159px;
+    
+            &.eltdf-no-thumbnail{
+                padding: 0;
+            }
+
+            .eltdf-post-title-area-inner {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                //border-bottom: 1px solid $default-border-color;
+                @include eltdfBoxSizing(border-box);
+
+                .eltdf-post-info {
+                    @include eltdfRelativeHolderLayout();
+                    line-height: 1;
+                    margin: 0 0 9px;
+                    clear: both;
+
+                    > div {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        float: left;
+                        padding: 0 17px 6px 0;
+                        color: inherit;
+                        font-size: inherit;
+                        line-height: 20px;
+
+                        &:after {
+                            position: absolute;
+                            top: 0;
+                            right: 5px;
+                            content: '/';
+                        }
+
+                        &:last-child {
+                            padding: 0 0 6px;
+
+                            &:after {
+                                display: none;
+                            }
+                        }
+
+                        &.eltdf-post-info-author {
+
+                            .eltdf-post-info-author-text {
+                                margin: 0 3px 0 0;
+                            }
+                        }
+
+                        a {
+                            color: inherit;
+                            line-height: inherit;
+                            font-size: inherit;
+                            font-weight: inherit;
+
+                            &:hover {
+                                color: $default-heading-color;
+                            }
+                        }
+                    }
+                }
+
+                > h3 {
+                    @include eltdfRelativeHolderLayout();
+                    margin: 0 0 14px;
+                }
+
+                .eltdf-post-excerpt {
+                    margin: 0;
+
+                    &:after {
+                        content: '...';
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+# Search template style - end
+========================================================================== */
+
+/* ==========================================================================
+# Search style - begin
+========================================================================== */
+
+.eltdf-search-opener {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    margin: 0 10px;
+
+	.eltdf-search-opener-wrapper {
+
+		> * {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.eltdf-icon-font-awesome,
+		.eltdf-icon-font-elegant,
+		.eltdf-icon-ion-icon {
+			line-height: inherit;
+		}
+	}
+}
+
+.eltdf-light-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-search-opener,
+.eltdf-light-header .eltdf-top-bar .eltdf-search-opener {
+    color: $header-light-color !important; //Color can be set inline from widget opener
+    
+    &:hover {
+        color: $header-light-hover-color !important;
+    }
+}
+
+.eltdf-dark-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-search-opener,
+.eltdf-dark-header .eltdf-top-bar .eltdf-search-opener {
+    color: $header-dark-color !important; //Color can be set inline from widget opener
+    
+    &:hover {
+        color: $header-dark-hover-color !important;
+    }
+}
+
+/* Fullscreen search general style - start
+========================================================================== */
+
+.eltdf-fullscreen-search-holder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 105;
+    opacity: 0;
+
+    .eltdf-form-holder-inner {
+        position: relative;
+        width: 50%;
+        margin: auto;
+
+        .eltdf-line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            border-bottom: 1px solid $default-border-color;
+            @include eltdfTransition(all .3s .2s);
+
+            .eltdf-fullscreen-search-opened & {
+                width: 100%;
+                @include eltdfTransition(width 0.5s ease .6s);
+            }
+        }
+    }
+
+    .eltdf-field-holder {
+        display: block;
+        position: relative;
+    }
+
+    .eltdf-search-field {
+	    position: relative;
+	    height: 100%;
+	    width: 100%;
+	    border: 0;
+	    background: transparent;
+	    outline: none;
+	    font-family: inherit;
+	    color: $default-heading-color;
+	    font-size: 22px;
+	    line-height: 2em;
+	    font-weight: 600;
+	    letter-spacing: 1px;
+    }
+
+    .eltdf-search-submit {
+        position: absolute;
+        right: 0;
+        bottom: -20px;
+	    width: auto;
+        font-size: 18px;
+	    line-height: 1em;
+	    color: $default-text-color;
+	    background-color: transparent;
+	    border: none;
+	    outline: none;
+	    opacity: 0;
+	    cursor: pointer;
+	    @include eltdfTransition(all .3s .2s);
+    
+        &:hover {
+            color: $default-heading-color;
+        }
+
+        .eltdf-fullscreen-search-opened & {
+            opacity: 1;
+            bottom: 8px;
+            @include eltdfTransition(color 0.2s ease, opacity .2s ease-out 1.1s, bottom .4s ease-out .9s);
+        }
+    }
+
+    .eltdf-fullscreen-search-close-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+
+        a {
+	        position: absolute;
+	        top: 20px;
+	        right: 40px;
+	        color: $default-text-color;
+	        font-size: 40px;
+	        opacity: 0;
+	        visibility: hidden;
+	
+	        &:hover {
+		        color: $default-heading-color;
+	        }
+        }
+    }
+}
+
+.eltdf-fullscreen-search-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.eltdf-fullscreen-search-cell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Fullscreen search general style - end
+========================================================================== */
+
+/* Fullscreen search fade style - start
+========================================================================== */
+
+.eltdf-search-fade .eltdf-fullscreen-search-holder {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 112;
+    @include eltdfBoxSizing(border-box);
+
+    .eltdf-fullscreen-search-table {
+        background-color: rgba(255, 255, 255, 0.96);
+    }
+}
+
+.eltdf-search-fade-out.eltdf-search-fade .eltdf-fullscreen-search-holder {
+    @include eltdfAnimation(search_fade_out .2s ease-out both);
+}
+
+.eltdf-search-fade-in.eltdf-search-fade .eltdf-fullscreen-search-holder.eltdf-animate {
+    @include eltdfAnimation(search_fade_in .3s ease both);
+}
+
+.eltdf-search-fade .eltdf-fullscreen-search-holder.eltdf-animate .eltdf-fullscreen-search-close {
+    opacity: 1;
+    visibility: visible;
+}
+
+@-webkit-keyframes search_fade_out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes search_fade_out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes search_fade_in {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes search_fade_in {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+/* Fullscreen search fade style - end
+========================================================================== */
+
+/*---------------Fade animation with PUSH TEXT TOP------------*/
+
+@-webkit-keyframes search_push_text_top {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+@keyframes search_push_text_top {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(60px);
+        transform: translateY(60px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+}
+
+.eltdf-search-fade.eltdf-fullscreen-search-opened .eltdf-fullscreen-search-holder .eltdf-form-holder {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    @include eltdfAnimation(search_push_text_top .4s ease-out both .25s);
+}
+
+.eltdf-search-fade-out.eltdf-search-fade .eltdf-fullscreen-search-holder .eltdf-search-label,
+.eltdf-search-fade-out.eltdf-search-fade .eltdf-fullscreen-search-holder .eltdf-search-submit,
+.eltdf-search-fade-out.eltdf-search-fade .eltdf-fullscreen-search-holder .eltdf-field-holder {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/*----------------------FULLSCREEN SEARCH style end--------------------------*/
+
+//placeholders
+
+.eltdf-fullscreen-search-opened {
+    ::-webkit-input-placeholder {
+        font-family: inherit;
+        color: #222;
+    }
+    ::-moz-placeholder {
+        font-family: inherit;
+        color: #222;
+    }
+    ::-moz-placeholder {
+        font-family: inherit;
+        color: #222;
+    }
+    ::-ms-input-placeholder {
+        font-family: inherit;
+        color: #222;
+    }
+}
+
+.eltdf-search-covers-header-opened {
+    ::-webkit-input-placeholder {
+        color: #666;
+    }
+    ::-moz-placeholder {
+        color: #666;
+    }
+    ::-moz-placeholder {
+        color: #666;
+    }
+    ::-ms-input-placeholder {
+        color: #666;
+    }
+}
+
+/* ==========================================================================
+# Search style - end
+========================================================================== */

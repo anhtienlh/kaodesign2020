@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Author Info widget style - begin
+   ========================================================================== */
+
+.eltdf-author-info-widget {
+	@include eltdfRelativeHolderLayout();
+	border: 1px solid $default-border-color;
+	@include eltdfBoxSizing(border-box);
+	background-color: $first-main-color;
+	color: #fff;
+
+	.eltdf-aiw-inner {
+		@include eltdfRelativeHolderLayout();
+		padding: 40px 25px 50px;
+		text-align: center;
+		@include eltdfBoxSizing(border-box);
+	}
+
+	.eltdf-aiw-image {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+
+		img {
+			display: block;
+		}
+	}
+
+	.eltdf-aiw-name {
+		display: block;
+		margin: 23px 0 0;
+		color: #fff;
+
+		a:hover {
+			color: #fff;
+		}
+	}
+
+	.eltdf-aiw-email {
+		display: block;
+		margin: 3px 0 0;
+		color: #fff;
+		text-transform: lowercase;
+	}
+
+	.eltdf-aiw-text {
+		display: block;
+		margin: 13px 0 0;
+	}
+}
+
+/* ==========================================================================
+   Author Info widget style - end
+   ========================================================================== */

@@ -1,0 +1,69 @@
+1.7
+- Added Ambient Dashboard
+- Updated Elated Core to 1.3
+- Updated WPBakery Page Builder to 6.1
+- Updated Revolution Slider to 6.1.5
+- Updated Elated instagram-feed plugin to 1.0.1 
+- Updated Elated twitter-feed plugin to 1.0.1 
+- Improved Import
+- Improved Welcome Page
+- Changed Ambient Options Position
+- Removed unused file instagram-redirect.php from Elated Instagram Widget plugin
+- Removed unused file twitter-redirect.php from Elated Twitter Feed plugin
+
+1.6
+- Added WooCommerce 3.7.0 compatibility
+- Updated WPBakery Page Builder to 6.0.5
+- Updated revolution slider to 6.1.0
+- Fixed warning on adding additional portfolio sidebar items
+- Fixed https issue with YouTube image
+- Fixed blank page transition issue
+- Fixed FullScreen menu scroll issue
+- Fixed header background color issue when using Top Bar and Fixed on scroll behavior
+
+1.5
+- Added WooCommerce 3.6.1 compatibility
+- Updated Core Plugin to 1.2
+- Improved import functionality
+- Improved theme security
+
+1.4
+- Added WooCommerce 3.5.6 compatibility
+- Added compatibility with Gutenberg plugin
+- Updated WPBakery Page Builder to 5.7
+- Updated Revolution Slider to 5.4.8.3
+- Updated Core Plugin to 1.1
+- Updated pot file
+- Improved framework files
+
+1.3.1
+- Fixed product image functionality on shop page
+
+1.3
+- Added WooCommerce 3.4.1 compatibility
+- Added compatibility with PHP 7.2
+- Updated Visual Composer 5.4.7
+- Updated revolution slider to 5.4.7.4
+- Upadate Elated Core plugin to version 1.0.2
+- Fixed issue with 404 Page background image
+- Fixed issue with portfolio slider
+
+1.2
+- Added Woocommerce 3.2.5 compatibility
+- Added Envato Market plugin as required
+- Added recommended plugins (WooCommerce and Contact Form 7)
+- Updated WPBakery Page Builder to 5.4.5
+- Updated Revolution Slider to 5.4.6.4
+- Upadate Elated Core plugin to version 1.0.1
+- Fixed single product lightbox
+- Fixed menu misalignment on Google Chrome
+- Improved import functionality
+
+1.1
+- Added WooCommerce 3+ compatibility
+- Added Enable Zoom Maginfier option
+- Added Set Images Behavior option
+- Updated Visual Composer to 5.1.1
+- Updated Revolution Slider to 5.4.5.1
+- Fixed issue with Load more button on Portfolio list shortcode
+- Fixed https problem with links

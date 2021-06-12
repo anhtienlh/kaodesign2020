@@ -1,0 +1,201 @@
+/* ==========================================================================
+# Side area style - start
+========================================================================== */
+
+/* Side area general style - start
+========================================================================== */
+
+.eltdf-light-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-side-menu-button-opener,
+.eltdf-light-header .eltdf-top-bar .eltdf-side-menu-button-opener {
+	color: $header-light-color !important; //Color can be set inline from widget opener;
+
+	&.opened,
+	&:hover {
+		color: $header-light-hover-color !important; //Color can be set inline from widget opener;
+	}
+}
+
+.eltdf-dark-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-side-menu-button-opener,
+.eltdf-dark-header .eltdf-top-bar .eltdf-side-menu-button-opener {
+	color: $header-dark-color !important; //Color can be set inline from widget opener;
+}
+
+.eltdf-side-menu-button-opener {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1;
+
+	.eltdf-side-menu-title {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0 8px 0 0;
+		color: currentColor;
+	}
+
+	.eltdf-side-menu-icon {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		width: 21px;
+		height: 21px;
+		font-size: 21px;
+		margin-left: -8px; //because of the space arround icon
+	}
+
+	&.opened,
+	&:hover {
+		color: $first-main-color;
+	}
+}
+
+.eltdf-side-menu {
+	position: fixed;
+	top: 0;
+	right: -405px;
+	width: 405px;
+	height: 100%;
+	min-height: 100%;
+	padding: 18px 45px 35px;
+	background-color: #fff;
+	text-align: left;
+	overflow: hidden;
+	visibility: hidden;
+	z-index: 9999;
+	-webkit-backface-visibility: hidden;
+	@include eltdfBoxShadow(-3px 0 3px rgba(0, 0, 0, 0.04));
+	@include eltdfBoxSizing(border-box);
+	@include eltdfTransition(all .6s cubic-bezier(.77, 0, .175, 1));
+
+	.eltdf-side-menu-title {
+		display: block;
+		margin: 0 0 12px;
+	}
+
+	.eltdf-close-side-menu-holder {
+		position: absolute;
+		top: 10px;
+		right: 35px;
+		display: table;
+		height: 40px;
+		z-index: 1000;
+	}
+
+	.eltdf-close-side-menu-holder-inner {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	a.eltdf-close-side-menu {
+		display: block;
+		padding: 0 10px;
+		z-index: 1000;
+
+		.eltdf-side-menu-lines {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			width: 17px;
+			height: 11px;
+			left: 40%;
+			-webkit-transition: -webkit-transform .6s cubic-bezier(.77, 0, .175, 1), left .6s cubic-bezier(.77, 0, .175, 1), background-color .2s ease-out;
+			-moz-transition: -moz-transform .6s cubic-bezier(.77, 0, .175, 1), left .6s cubic-bezier(.77, 0, .175, 1), background-color .2s ease-out;
+			transition: transform .3s cubic-bezier(.77, 0, .175, 1), left .0s .3s, background-color .0s .3s;
+
+			.eltdf-side-menu-line {
+				position: absolute;
+				left: 0;
+				height: 2px;
+				width: 100%;
+				background-color: #808285;
+				@include eltdfTransition(background-color .2s ease-out);
+
+				&.eltdf-line-1 {
+					display: none;
+				}
+				&.eltdf-line-2 {
+					top: 50%;
+				}
+				&.eltdf-line-3 {
+					top: 50%;
+					@include eltdfTransform(rotate(90deg));
+				}
+			}
+		}
+
+		&:hover {
+
+			.eltdf-side-menu-lines {
+
+				.eltdf-side-menu-line {
+					background-color: $first-main-color;
+				}
+			}
+
+			span:before {
+
+				@include eltdfTransform(rotate(360deg));
+			}
+		}
+	}
+
+	.admin-bar & {
+		top: 32px;
+	}
+}
+
+/* Side area general style - end
+========================================================================== */
+
+/* Side area slides over content style - start
+========================================================================== */
+
+.eltdf-side-menu-slide-from-right {
+
+	.eltdf-wrapper {
+
+		.eltdf-cover {
+			z-index: -1;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			opacity: 0;
+		}
+	}
+}
+
+.eltdf-side-menu-slide-from-right.eltdf-right-side-menu-opened {
+
+	.eltdf-wrapper {
+		.eltdf-cover {
+			z-index: 3000;
+		}
+	}
+
+	.eltdf-side-menu {
+		right: 0px;
+		visibility: visible;
+
+		.eltdf-close-side-menu-holder {
+			a.eltdf-close-side-menu {
+				.eltdf-side-menu-lines {
+					left: 0;
+					@include eltdfTransform(rotate(45deg));
+					-webkit-transition: -webkit-transform .6s cubic-bezier(.77, 0, .175, 1) .2s, left .6s cubic-bezier(.77, 0, .175, 1), background-color .2s ease-out;
+					transition: transform .6s cubic-bezier(.77, 0, .175, 1) .2s, left .6s cubic-bezier(.77, 0, .175, 1), background-color .2s ease-out;
+				}
+			}
+		}
+	}
+}
+
+/* Side area slides over content style - end
+========================================================================== */
+
+/* ==========================================================================
+# Side area style - end
+========================================================================== */

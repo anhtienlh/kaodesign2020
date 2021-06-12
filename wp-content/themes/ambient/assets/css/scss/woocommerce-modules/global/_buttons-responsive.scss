@@ -1,0 +1,22 @@
+/* ==========================================================================
+   WooCommerce Buttons responsive styles - begin
+   ========================================================================== */
+
+@include ipad-landscape {
+
+    .woocommerce-page .eltdf-content,
+    div.woocommerce {
+
+        a.button,
+        a.added_to_cart,
+        input[type="submit"],
+        button[type="submit"] {
+            height: 46px;
+            line-height: 46px;
+            padding: 0 36px;
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Buttons responsive styles - end
+   ========================================================================== */

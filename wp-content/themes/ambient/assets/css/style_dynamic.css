@@ -1,0 +1,89 @@
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/assets/custom-styles/general-custom-styles.php ambient_elated_design_styles function */
+body, h6, blockquote, .eltdf-comment-holder .eltdf-comment-text .replay, .eltdf-comment-holder .eltdf-comment-text .comment-reply-link, .eltdf-comment-holder .eltdf-comment-text .comment-edit-link, .eltdf-comment-holder .eltdf-comment-text .eltdf-comment-date, .eltdf-comment-holder .eltdf-comment-text #cancel-comment-reply-link, .eltdf-title.eltdf-breadcrumbs-type .eltdf-breadcrumbs a, .eltdf-title.eltdf-breadcrumbs-type .eltdf-breadcrumbs span, .eltdf-search-page-holder .eltdf-search-page-form .eltdf-form-holder .eltdf-search-field, .eltdf-search-page-holder .eltdf-search-page-form .eltdf-form-holder .eltdf-search-submit, .eltdf-portfolio-single-holder .eltdf-portfolio-info-item:not(.eltdf-content-item).eltdf-portfolio-tags a, .eltdf-blog-holder article .eltdf-post-info > div, .eltdf-blog-holder article.format-link .eltdf-link-content .eltdf-link-text .eltdf-link-url, .eltdf-blog-holder article.format-quote .eltdf-quote-content .eltdf-quote-text .eltdf-quote-author, .eltdf-single-tags-holder .eltdf-tags a, .eltdf-social-share-tags-holder .eltdf-blog-single-share .eltdf-social-share-holder .eltdf-social-title, .eltdf-author-description .eltdf-author-description-text-holder .eltdf-author-text, .eltdf-related-posts-holder .eltdf-related-post .eltdf-post-info > div, .eltdf-blog-single-navigation .eltdf-blog-single-prev .eltdf-blog-single-nav-label, .eltdf-blog-single-navigation .eltdf-blog-single-next .eltdf-blog-single-nav-label, .eltdf-blog-list-holder .eltdf-bli-info > div, .eltdf-blog-list-holder .eltdf-single-tags-holder .eltdf-tags a, .eltdf-blog-list-holder .eltdf-bli-read-more-holder .eltdf-btn, .eltdf-portfolio-list-holder article .eltdf-pli-text .eltdf-pli-category-holder a, .widget.widget_search input, .widget.widget_search button, .widget.widget_recent_entries ul li > span, .widget.widget_tag_cloud a, .widget.widget_eltdf_twitter_widget .eltdf-twitter-widget.eltdf-twitter-slider li .eltdf-tweet-text a.eltdf-tweet-time { font-family: Archivo Narrow;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/assets/custom-styles/general-custom-styles.php ambient_elated_design_styles function */
+.eltdf-boxed .eltdf-wrapper { background-attachment: fixed;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/assets/custom-styles/general-custom-styles.php ambient_elated_content_styles function */
+.eltdf-content .eltdf-content-inner > .eltdf-full-width > .eltdf-full-width-inner { padding-top: 0px;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/assets/custom-styles/general-custom-styles.php ambient_elated_content_styles function */
+.eltdf-content .eltdf-content-inner > .eltdf-container > .eltdf-container-inner { padding-top: 40px;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/error404/custom-styles/custom-styles.php ambient_elated_404_subtitle_styles function */
+.error404 .eltdf-page-not-found h3 { color: ;font-family: ;font-size: px;line-height: px;font-style: ;font-weight: ;letter-spacing: px;text-transform: ;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/footer/custom-styles/custom-styles.php ambient_elated_footer_bg_image_styles function */
+body.eltdf-footer-with-bg-image .eltdf-footer-top-holder { background-image: url(http://kaodesign.vn/wp-content/uploads/2020/09/background-footer.jpg);}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/header.php ambient_elated_header_standard_menu_area_styles function */
+.eltdf-header-standard .eltdf-page-header { background-color: rgba(255, 255, 255, 0);}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/header.php ambient_elated_sticky_header_styles function */
+.eltdf-page-header .eltdf-sticky-header .eltdf-sticky-holder { background-color: rgba(37, 37, 37, 1);}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/header.php ambient_elated_sticky_header_styles function */
+.eltdf-page-header .eltdf-sticky-header { height: 80px;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/header.php ambient_elated_sticky_header_styles function */
+.eltdf-page-header .eltdf-sticky-header .eltdf-logo-wrapper a { max-height: 80px;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/header.php ambient_elated_fixed_header_styles function */
+.eltdf-page-header .eltdf-fixed-wrapper.fixed .eltdf-menu-area { background-color: rgba(255, 255, 255, 0)!important;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/header.php ambient_elated_fixed_header_styles function */
+.eltdf-fixed-wrapper.fixed .eltdf-main-menu > ul > li > a { font-family: Archivo Narrow;font-size: 16px;}
+
+            .eltdf-main-menu > ul > li > a {
+             color: #ffffff;                             font-family: 'Archivo Narrow', sans-serif;
+                         font-size: 16px;                                                                         }
+        
+                    .eltdf-main-menu > ul > li > a:hover,
+            .eltdf-main-menu > ul > li.eltdf-active-item:hover > a {
+                color: #dfb947 !important;
+            }
+        
+                    .eltdf-main-menu > ul > li.eltdf-active-item > a {
+                color: #dfb947;
+            }
+        
+        
+        
+        
+        
+        
+        
+        
+                        .eltdf-drop-down .second .inner > ul > li > a{
+                     color: #ffffff;                                                                                                                                                             }
+        
+        
+        
+        
+                
+        
+        
+        /* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/mobile-header.php ambient_elated_mobile_header_general_styles function */
+.eltdf-mobile-header .eltdf-mobile-header-inner { background-color: #252525;border-color: #252525;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/mobile-header.php ambient_elated_mobile_navigation_styles function */
+.eltdf-mobile-header .eltdf-mobile-nav { background-color: #252525;border-color: #252525;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/mobile-header.php ambient_elated_mobile_navigation_styles function */
+.eltdf-mobile-header .eltdf-mobile-nav .eltdf-grid > ul > li > a, .eltdf-mobile-header .eltdf-mobile-nav .eltdf-grid > ul > li > h5 { color: #ffffff;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/mobile-header.php ambient_elated_mobile_navigation_styles function */
+.eltdf-mobile-header .eltdf-mobile-nav ul ul li a, .eltdf-mobile-header .eltdf-mobile-nav ul ul li h5 { color: #ffffff;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/mobile-header.php ambient_elated_mobile_icon_styles function */
+.eltdf-mobile-header .eltdf-mobile-menu-opener a .eltdf-mo-lines .eltdf-mo-line { background-color: #ffffff;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/mobile-header.php ambient_elated_mobile_icon_styles function */
+.eltdf-mobile-header .eltdf-mobile-menu-opener a .eltdf-mobile-menu-text { color: #ffffff;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/mobile-header.php ambient_elated_mobile_icon_styles function */
+.eltdf-mobile-header .eltdf-mobile-menu-opener a:hover .eltdf-mo-lines .eltdf-mo-line { background-color: #dfb947;}
+
+/* generated in /home/dannytua/kaodesign.vn.2020/wp-content/themes/ambient/framework/modules/header/custom-styles/mobile-header.php ambient_elated_mobile_icon_styles function */
+.eltdf-mobile-header .eltdf-mobile-menu-opener a:hover .eltdf-mobile-menu-text { color: #dfb947;}
+

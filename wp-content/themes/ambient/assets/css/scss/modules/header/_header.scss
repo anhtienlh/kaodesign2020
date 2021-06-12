@@ -1,0 +1,386 @@
+@import "blocks/logo";
+@import "blocks/main_menu";
+@import "top-bar/top-bar";
+@import "types/header-standard/header-standard";
+@import "types/header-full-screen/header-full-screen";
+@import "types/header-vertical/header-vertical";
+@import "blocks/sticky_nav";
+@import "types/mobile-header/mobile-header";
+
+$logo-area-height: 80px;
+$menu-area-height: 80px;
+$sticky-header-height: 60px;
+
+.eltdf-page-header {
+	@include eltdfRelativeHolderLayout();
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	z-index: 110;
+	@include eltdfBoxSizing(border-box);
+
+	/* ==========================================================================
+	#General header layout - start
+	========================================================================== */
+	a img {
+		display: block;
+	}
+
+	p {
+		margin: 0;
+	}
+	/* ==========================================================================
+	#General header layout - end
+	========================================================================== */
+
+	/* ==========================================================================
+	#Logo area styles - start
+	========================================================================== */
+	.eltdf-logo-area {
+		height: $logo-area-height;
+		overflow: hidden;
+		position: relative;
+
+		.eltdf-logo-wrapper a {
+			max-height: $logo-area-height;
+		}
+	}
+	/* ==========================================================================
+	#Logo area styles - end
+	========================================================================== */
+
+	/* ==========================================================================
+	#Menu area styles - start
+	========================================================================== */
+	.eltdf-menu-area {
+		position: relative;
+		height: $menu-area-height;
+		padding: 0 50px;
+		@include eltdfBoxSizing(border-box);
+
+		.eltdf-boxed & {
+			padding: 0;
+		}
+
+		.eltdf-vertical-align-containers {
+			padding: 0;
+		}
+
+		.eltdf-logo-wrapper a {
+			max-height: $menu-area-height;
+		}
+
+		.widget {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+		}
+	}
+	/* ==========================================================================
+	#Menu area styles - end
+	========================================================================== */
+
+	/* ==========================================================================
+	#Sticky header styles - start
+	========================================================================== */
+	.eltdf-sticky-header {
+		height: $sticky-header-height;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		@include eltdfTransform(translateY(-100%));
+		-webkit-transition: -webkit-transform 0.6s ease;
+		-moz-transition: -moz-transform 0.6s ease;
+		transition: transform .6s ease;
+		-webkit-backface-visibility: hidden;
+
+		.eltdf-grid {
+			height: 100% !important; //override settings for other instances of this div
+		}
+
+		&.header-appear {
+			transform: translateY(0%);
+		}
+
+		.eltdf-sticky-holder {
+			height: 100%;
+			position: relative;
+			z-index: 2;
+			background-color: #fff;
+			@include eltdfBoxShadow(2px 2px 2px rgba(0, 0, 0, 0.085));
+			@include eltdfBoxSizing(border-box);
+
+			.eltdf-vertical-align-containers {
+				padding: 0 50px;
+
+				.eltdf-boxed & {
+					padding: 0 25px;
+				}
+			}
+		}
+
+		.admin-bar &.header-appear {
+			top: 32px;
+		}
+
+		.eltdf-sticky-holder .eltdf-logo-wrapper a {
+			max-height: $sticky-header-height;
+		}
+
+		.eltdf-position-center-inner {
+			height: 100%;
+		}
+
+		.eltdf-sticky-right {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.eltdf-position-right-inner {
+			height: 100%;
+		}
+
+		.eltdf-sticky-right-widget-area {
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+			@include eltdfClearfix;
+
+			.eltdf-header-widget-separator &:before {
+				content: '';
+				height: 60%;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 1px;
+				background-color: #4b4b4b;
+				display: block;
+				position: absolute;
+			}
+		}
+	}
+	/* ==========================================================================
+	#Sticky header styles - end
+	========================================================================== */
+
+	/* ==========================================================================
+	#Fixed header styles - start
+	========================================================================== */
+	.eltdf-fixed-wrapper {
+		position: fixed;
+		width: 100%;
+		left: 0px;
+		top: 0px;
+	}
+
+	.eltdf-fixed-wrapper.fixed {
+
+		background-color: #fff;
+		border-bottom: 1px solid transparent;
+		-webkit-backface-visibility: hidden;
+
+		.eltdf-menu-area {
+			border-bottom: 0;
+		}
+
+		.admin-bar & {
+			margin-top: 32px;
+		}
+	}
+
+	/* ==========================================================================
+	#Fixed header - end
+	========================================================================== */
+
+	.eltdf-main-menu-widget-area {
+		display: inline-block;;
+		vertical-align: middle;
+		margin: 0;
+		position: relative;
+
+		.eltdf-header-widget-separator &:before {
+			content: '';
+			height: 60%;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 1px;
+			background-color: #4b4b4b;
+			display: block;
+			position: absolute;
+		}
+	}
+}
+
+/* ==========================================================================
+#Light header - begin
+========================================================================== */
+
+.eltdf-light-header {
+
+	.eltdf-page-header > div:not(.fixed):not(.eltdf-sticky-header) {
+
+		.eltdf-logo-wrapper {
+
+			.eltdf-light-logo {
+				opacity: 1;
+			}
+
+			.eltdf-normal-logo,
+			.eltdf-dark-logo {
+				opacity: 0;
+			}
+		}
+
+		.eltdf-menu-area {
+			color: $header-light-color !important; //Beacause of inline color styles
+
+			.widget {
+				color: $header-light-color !important; //Beacause of inline color styles
+
+				p,
+				a,
+				span,
+				i,
+				.widgettitle {
+					color: $header-light-color !important; //Beacause of inline color styles
+				}
+
+				a:hover {
+					color: $header-light-hover-color !important; //Beacause of inline color styles
+				}
+			}
+		}
+
+		&.eltdf-menu-area {
+			color: $header-light-color !important; //Beacause of inline color styles
+
+			.widget {
+				color: $header-light-color !important; //Beacause of inline color styles
+
+				p,
+				a,
+				span,
+				i,
+				.widgettitle {
+					color: $header-light-color !important; //Beacause of inline color styles
+				}
+
+				a:hover {
+					color: $header-light-hover-color !important; //Beacause of inline color styles
+				}
+			}
+		}
+	}
+
+	.eltdf-vertical-menu-area {
+
+		.eltdf-logo-wrapper {
+
+			.eltdf-light-logo {
+				opacity: 1;
+			}
+
+			.eltdf-normal-logo,
+			.eltdf-dark-logo {
+				opacity: 0;
+			}
+		}
+	}
+
+	&.eltdf-header-widget-separator .eltdf-main-menu-widget-area:before {
+		background-color: $header-light-color;
+	}
+}
+
+/* ==========================================================================
+#Light header - end
+========================================================================== */
+
+/* ==========================================================================
+#Dark header - begin
+========================================================================== */
+
+.eltdf-dark-header {
+
+	.eltdf-page-header {
+
+		> div:not(.fixed):not(.eltdf-sticky-header) {
+
+			.eltdf-logo-wrapper {
+
+				.eltdf-dark-logo {
+					opacity: 1;
+				}
+
+				.eltdf-normal-logo,
+				.eltdf-light-logo {
+					opacity: 0;
+				}
+			}
+
+			.eltdf-menu-area {
+				color: $header-dark-color !important; //Because of inline color styles
+
+				.widget {
+					color: $header-dark-color !important; //Beacause of inline color styles
+
+					p,
+					a,
+					span,
+					i,
+					.widgettitle {
+						color: $header-dark-color !important; //Beacause of inline color styles
+					}
+
+					a:hover {
+						color: $header-dark-hover-color !important; //Beacause of inline color styles
+					}
+				}
+			}
+
+			&.eltdf-menu-area {
+				color: $header-dark-color !important; //Because of inline color styles
+
+				.widget {
+					color: $header-dark-color !important; //Beacause of inline color styles
+
+					p,
+					a,
+					span,
+					i,
+					.widgettitle {
+						color: $header-dark-color !important; //Beacause of inline color styles
+					}
+
+					a:hover {
+						color: $header-dark-hover-color !important; //Beacause of inline color styles
+					}
+				}
+			}
+		}
+	}
+
+	.eltdf-vertical-menu-area {
+
+		.eltdf-logo-wrapper {
+
+			.eltdf-dark-logo {
+				opacity: 1;
+			}
+
+			.eltdf-normal-logo,
+			.eltdf-light-logo {
+				opacity: 0;
+			}
+		}
+	}
+
+	&.eltdf-header-widget-separator .eltdf-main-menu-widget-area:before {
+		background-color: $header-dark-color;
+	}
+}
+
+/* ==========================================================================
+#Dark header - end
+========================================================================== */

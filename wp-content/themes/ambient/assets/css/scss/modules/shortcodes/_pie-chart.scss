@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Pie Chart shortcode style - begin
+   ========================================================================== */
+
+.eltdf-pie-chart-holder {
+    @include eltdfRelativeHolderLayout();
+	opacity: 0;
+	@include eltdfTransition(opacity .2s ease-in);
+	
+    .eltdf-pc-percentage {
+        position: relative;
+        display: block;
+        height: 176px;
+        width: 176px;
+        line-height: 176px;
+	    text-align: center;
+	    margin: 0 auto;
+    
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .eltdf-pc-percent {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            color: $default-heading-color;
+	        font-size: 36px;
+	        line-height: inherit;
+	        font-weight: 600;
+    
+            &:after {
+                position: relative;
+	            top: -15px;
+                content: '%';
+	            font-size: 15px;
+            }
+        }
+    }
+
+    .eltdf-pc-text-holder {
+        @include eltdfRelativeHolderLayout();
+        text-align: center;
+        margin: 30px 0 0;
+	    
+	    .eltdf-pc-title {
+		    margin: 0;
+	    }
+	
+	    .eltdf-pc-text {
+		    margin: 9px 0 0;
+	    }
+    }
+}
+/* ==========================================================================
+   Pie Chart shortcode style - end
+   ========================================================================== */

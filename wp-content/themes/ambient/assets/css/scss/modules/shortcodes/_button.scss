@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Button shortcode style - begin
+   ========================================================================== */
+
+.eltdf-btn {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	padding: 16px 43px 17px;
+	font-family: $first-main-font;
+	font-size: 14px;
+	line-height: 19px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 600;
+	@include eltdfTransition(color .15s ease-out, background-color .15s ease-out, border-color .15s ease-out);
+	@include eltdfBoxSizing(border-box);
+	border-radius: 0;
+
+	&.eltdf-btn-simple {
+		padding: 0 !important;
+		color: $default-text-color;
+		background-color: transparent;
+		border: 0;
+		vertical-align: middle;
+
+		.eltdf-btn-text {
+			display: inline-block;
+			vertical-align: middle;
+
+			&:after {
+				position: absolute;
+				content: '';
+				display: block;
+				height: 2px;
+				width: 0;
+				background-color: $first-main-color;
+				left: 50%;
+				top: 25px;
+				@include eltdfTransform(translate(-50%,0) translateZ(0));
+				@include eltdfTransition(width .25s cubic-bezier(0.27,0.62,0.43,1.01));
+			}
+		}
+
+		&:hover {
+			.eltdf-btn-text:after {
+				width: 100%;
+			}
+		}
+
+		&:not(.eltdf-btn-custom-hover-color):hover {
+			//important because of inline color attribute. not is used so we don't have to use important in JS
+			color: $default-heading-color !important;
+		}
+
+		&:not(.eltdf-btn-custom-hover-bg):hover {
+			//important because of inline color attribute. not is used so we don't have to use important in JS
+			background-color: transparent !important;
+		}
+
+		&:not(.eltdf-btn-custom-border-hover):hover {
+			//important because of inline color attribute. not is used so we don't have to use important in JS
+			border-color: transparent !important;
+		}
+	}
+
+	&.eltdf-btn-solid {
+		color: #fff;
+		background-color: $first-main-color;
+		border: 1px solid $first-main-color;
+
+		&:not(.eltdf-btn-custom-hover-color):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			color: #fff !important;
+		}
+
+		&:not(.eltdf-btn-custom-hover-bg):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			background-color: $default-heading-color !important;
+		}
+
+		&:not(.eltdf-btn-custom-border-hover):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			border-color: $default-heading-color !important;
+		}
+	}
+
+	&.eltdf-btn-outline {
+		color: $first-main-color;
+		background-color: transparent;
+		border: 1px solid $first-main-color;
+
+		&:not(.eltdf-btn-custom-hover-color):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			color: #fff !important;
+		}
+
+		&:not(.eltdf-btn-custom-hover-bg):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			background-color: $first-main-color !important;
+		}
+
+		&:not(.eltdf-btn-custom-border-hover):hover {
+			//important because of inline color attribute. :not is used so we don't have to use important in JS
+			border-color: $first-main-color !important;
+		}
+	}
+
+	&.eltdf-btn-small {
+		padding: 11px 36px;
+	}
+
+	&.eltdf-btn-medium {
+		//same as default
+	}
+
+	&.eltdf-btn-large {
+		padding: 20px 58px;
+	}
+
+	&.eltdf-btn-huge {
+		display: block;
+		text-align: center;
+		padding: 21px 58px;
+	}
+
+	&.eltdf-btn-icon {
+
+		> i,
+		> span:not(.eltdf-btn-text) {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 0 0 4px;
+			font-size: 1.142857142857143em;
+			line-height: inherit;
+
+			&:before {
+				display: block;
+				line-height: inherit;
+			}
+		}
+	}
+}
+
+input[type=submit].eltdf-btn,
+button.eltdf-btn {
+	cursor: pointer;
+}
+
+/* ==========================================================================
+   Button shortcode style - end
+   ========================================================================== */

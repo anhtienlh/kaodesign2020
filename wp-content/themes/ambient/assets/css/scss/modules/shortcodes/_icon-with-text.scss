@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Icon With Text shortcode style - begin
+   ========================================================================== */
+
+@include keyframes(jump) {
+	0% {
+		@include eltdfTransform(translate3d(0, 0, 0));
+	}
+	50% {
+		@include eltdfTransform(translate3d(0, -8%, 0));
+	}
+	100% {
+		@include eltdfTransform(translate3d(0, 0, 0));
+	}
+}
+
+.eltdf-iwt {
+    @include eltdfRelativeHolderLayout();
+	
+	.eltdf-iwt-icon {
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+		}
+		
+		.eltdf-icon-shortcode {
+			line-height: 1;
+
+			&.eltdf-circle,
+			&.eltdf-square {
+				line-height: 2;
+			}
+		}
+	}
+	
+	.eltdf-iwt-title {
+		margin: 0;
+	}
+	
+	.eltdf-iwt-text {
+		margin: 9px 0 0;
+	}
+
+	&.eltdf-iwt-icon-left {
+		width: auto;
+		
+		.eltdf-iwt-icon,
+		.eltdf-iwt-content {
+			display: table-cell;
+			vertical-align: top;
+		}
+
+        .eltdf-iwt-icon {
+	        position: relative;
+	        top: 1px;
+	        
+			img {
+				max-width: none;
+			}
+        }
+		
+		.eltdf-iwt-content {
+			padding: 0 0 0 11px;
+		}
+	}
+
+	&.eltdf-iwt-icon-top {
+		text-align: center;
+		
+		.eltdf-iwt-content {
+			padding: 13px 0 0;
+		}
+
+		.eltdf-iwt-icon {
+
+			a:hover {
+				@include eltdfAnimation(jump 0.45s 1 cubic-bezier(.53,.01,.18,1));
+			}
+		}
+
+	}
+}
+/* ==========================================================================
+   Icon With Text shortcode style - end
+   ========================================================================== */

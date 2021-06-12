@@ -1,0 +1,163 @@
+/* ==========================================================================
+# Footer responsive style - begin
+========================================================================== */
+
+@include laptop-landscape-large {
+
+    footer {
+
+        .eltdf-footer-top {
+
+            &:not(.eltdf-footer-top-full) {
+
+                .eltdf-container-inner {
+                    padding: 61px 0;
+                }
+            }
+
+            &.eltdf-footer-top-full {
+                padding: 61px 40px;
+            }
+        }
+
+        .eltdf-footer-bottom {
+
+            &.eltdf-footer-bottom-full {
+                padding: 19px 40px;
+            }
+        }
+
+        .eltdf-footer-top-full,
+        .eltdf-footer-bottom-full {
+
+            > .eltdf-two-columns-50-50 > .eltdf-two-columns-50-50-inner,
+            > .eltdf-three-columns > .eltdf-three-columns-inner,
+            > .eltdf-four-columns > .eltdf-four-columns-inner {
+                margin: 0 -35px;
+
+                .eltdf-column {
+
+                    .eltdf-column-inner {
+                        padding: 0 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include laptop-landscape {
+
+    footer {
+
+        .eltdf-footer-top {
+
+            &.eltdf-footer-top-full {
+                padding: 61px 30px;
+            }
+        }
+
+        .eltdf-footer-bottom {
+
+            &.eltdf-footer-bottom-full {
+                padding: 19px 30px;
+            }
+        }
+
+        .eltdf-footer-top-full,
+        .eltdf-footer-bottom-full {
+
+            > .eltdf-two-columns-50-50 > .eltdf-two-columns-50-50-inner,
+            > .eltdf-three-columns > .eltdf-three-columns-inner,
+            > .eltdf-four-columns > .eltdf-four-columns-inner {
+                margin: 0 -30px;
+
+                .eltdf-column {
+
+                    .eltdf-column-inner {
+                        padding: 0 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $ipad-landscape) {
+
+    footer {
+
+        .eltdf-footer-top-full,
+        .eltdf-footer-bottom-full {
+
+            > .eltdf-two-columns-50-50 > .eltdf-two-columns-50-50-inner,
+            > .eltdf-three-columns > .eltdf-three-columns-inner,
+            > .eltdf-four-columns > .eltdf-four-columns-inner {
+                margin: 0 -25px;
+
+                .eltdf-column {
+
+                    .eltdf-column-inner {
+                        padding: 0 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $ipad-portrait) {
+
+    footer {
+
+        .eltdf-column {
+
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
+        }
+	
+	    .eltdf-footer-top {
+		    
+		    &.eltdf-footer-top-full {
+			    padding-right: 25px;
+			    padding-left: 25px;
+		    }
+	    }
+	
+	    .eltdf-footer-bottom {
+		
+		    &:not(.eltdf-footer-bottom-full) {
+			
+			    .eltdf-container-inner {
+				    padding: 35px 0;
+			    }
+		    }
+		
+		    &.eltdf-footer-bottom-full {
+			    padding: 35px 25px;
+		    }
+	    }
+
+        .eltdf-footer-top-full,
+        .eltdf-footer-bottom-full {
+
+            > .eltdf-two-columns-50-50 > .eltdf-two-columns-50-50-inner,
+            > .eltdf-three-columns > .eltdf-three-columns-inner,
+            > .eltdf-four-columns > .eltdf-four-columns-inner {
+                margin: 0;
+
+                .eltdf-column {
+
+                    .eltdf-column-inner {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+# Footer responsive style - end
+========================================================================== */

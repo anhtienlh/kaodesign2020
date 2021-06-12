@@ -1,0 +1,34 @@
+/* Woocommerce Product Page shortcode responsive style - begin
+========================================================================== */
+
+@media only screen and (max-width: 680px) {
+
+    div.woocommerce {
+
+        > .single-product {
+    
+            .images {
+        
+                .thumbnails {
+            
+                    &.columns-2 {
+                
+                        a {
+                            float: none;
+                            width: 100%;
+                        }
+                    }
+            
+                    &.columns-4 {
+                
+                        a {
+                            width: 50%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* Woocommerce Product Page shortcode responsive style - end
+========================================================================== */

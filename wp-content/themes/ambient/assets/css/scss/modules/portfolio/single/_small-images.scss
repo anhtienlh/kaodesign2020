@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Portfolio Single Small Images style - begin
+   ========================================================================== */
+
+.small-images {
+    margin: 0 0 70px;
+    
+    .eltdf-portfolio-media .eltdf-portfolio-single-media {
+        margin: 0 0 30px;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        a, img {
+            display: block;
+        }
+    }
+
+    .eltdf-follow-portfolio-info {
+        position: relative;
+    }
+}
+
+@include ipad-landscape {
+
+    .small-images .eltdf-portfolio-info-holder {
+        margin: 32px 0 0 !important;
+    }
+}
+/* ==========================================================================
+   Portfolio Single Small Images style - end
+   ========================================================================== */

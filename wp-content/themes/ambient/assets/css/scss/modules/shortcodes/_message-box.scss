@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Message Box shortcode style - begin
+   ========================================================================== */
+
+.eltdf-message-box-holder {
+    @include eltdfRelativeHolderLayout();
+    padding: 35px 30px;
+    margin: 0;
+	border: 2px solid $default-border-color;
+	@include eltdfBoxSizing(border-box);
+
+    .eltdf-mb-inner {
+	    @include eltdfRelativeHolderLayout();
+	    padding: 0 20px 0 0;
+	    @include eltdfBoxSizing(border-box);
+    }
+	
+	.eltdf-mb-icon,
+	.eltdf-mb-text {
+		display: table-cell;
+		vertical-align: top;
+	}
+	
+	.eltdf-mb-icon {
+		padding: 0 8px 0 0;
+		
+		> * {
+			color: $first-main-color;
+			font-size: 24px;
+		}
+	}
+	
+	.eltdf-mb-text {
+		
+		> * {
+			margin: 0;
+		}
+	}
+	
+	.eltdf-mb-close {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		font-size: 18px;
+		line-height: 1;
+		@include eltdfTransform(translateY(-50%));
+	}
+}
+/* ==========================================================================
+   Message Box shortcode style - end
+   ========================================================================== */

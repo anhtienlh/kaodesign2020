@@ -1,0 +1,119 @@
+/* ==========================================================================
+   WooCommerce Quantity Inputs styles - begin
+   ========================================================================== */
+
+.woocommerce-page .eltdf-content,
+div.woocommerce {
+
+    .eltdf-quantity-buttons {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+
+        .eltdf-quantity-input,
+        .eltdf-quantity-minus,
+        .eltdf-quantity-plus {
+            display: inline-block;
+            vertical-align: middle;
+            color: $default-heading-color;
+            background-color: transparent;
+            border: 1px solid $default-border-color;
+            text-align: center;
+            @include eltdfBoxSizing(border-box);
+        }
+
+        .eltdf-quantity-input {
+            position: relative;
+            height: 56px;
+            width: 56px;
+            padding: 0;
+            margin: 0 28px 0 0;
+            font-family: $first-main-font;
+            font-size: 18px;
+            line-height: 54px;
+            font-weight: 600;
+            outline: 0;
+            border-radius: 0;
+        }
+
+        .eltdf-quantity-minus,
+        .eltdf-quantity-plus {
+            position: absolute;
+            right: 0;
+            width: 28px;
+            height: 28px;
+	        font-size: 17px;
+            line-height: 26px;
+	        font-weight: 700;
+            border-left: 0;
+            cursor: pointer;
+            @include eltdfTransition(color .15s ease-in-out);
+
+            &:hover {
+                color: $first-main-color;
+            }
+        }
+
+        .eltdf-quantity-plus {
+            top: 0;
+            border-bottom: 0;
+        }
+
+        .eltdf-quantity-minus {
+            bottom: 0;
+        }
+    }
+}
+
+.woocommerce-page .eltdf-content,
+div.woocommerce {
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    textarea {
+        position: relative;
+        width: 100%;
+        margin: 0 0 15px;
+        padding: 13px 24px;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-weight: inherit;
+        color: $default-heading-color;
+        background-color: transparent;
+        border: 1px solid $default-border-color;
+        border-radius: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        @include eltdfBoxSizing(border-box);
+
+        &:focus {
+	        border-color: $default-text-color;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $default-text-color;
+        }
+        &:-moz-placeholder {
+            color: $default-text-color;
+        }
+        &::-moz-placeholder {
+            color: $default-text-color;
+        }
+        &:-ms-input-placeholder {
+            color: $default-text-color;
+        }
+    }
+
+    .coupon {
+
+        input[type="text"] {
+            width: 200px;
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Quantity Inputs styles - end
+   ========================================================================== */

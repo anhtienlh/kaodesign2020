@@ -1,0 +1,26 @@
+/* ==========================================================================
+   WooCommerce Message styles - begin
+   ========================================================================== */
+.eltdf-woocommerce-page {
+
+    .woocommerce-message,
+    .woocommerce-info,
+    .woocommerce-error {
+        position: relative;
+        display: block;
+        padding: 26px 35px;
+        margin: 0 0 35px;
+        line-height: 46px;
+        list-style: none;
+        background-color: transparent;
+        border: 2px solid $default-border-color;
+        @include eltdfBoxSizing(border-box);
+
+        a {
+            float: right;
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Message styles - end
+   ========================================================================== */

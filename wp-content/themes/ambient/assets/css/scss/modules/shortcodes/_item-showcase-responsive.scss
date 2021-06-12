@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Item Showcase shortcode responsive style - begin
+   ========================================================================== */
+@include ipad-landscape {
+	.eltdf-item-showcase-holder {
+
+		.eltdf-is-image {
+			width: 100%;
+		}
+
+		.eltdf-is-item-holder {
+			width: 50%;
+			margin-top: 65px;
+		}
+	}
+}
+
+@include ipad-portrait {
+
+	.eltdf-item-showcase-holder {
+
+		.eltdf-is-item-holder {
+			&.eltdf-is-left-holder,
+			&.eltdf-is-right-holder {
+				float: none;
+				width: 100%;
+			}
+		}
+
+		.eltdf-is-item {
+			opacity: 1;
+			-webkit-transform: translateX(0) translateY(0) !important;
+			-moz-transform: translateX(0) translateY(0) !important;
+			transform: translateX(0) translateY(0) !important;
+
+			&.eltdf-is-right {
+				padding-left: 0;
+			}
+
+			&.eltdf-is-left {
+				padding-right: 0;
+
+				.eltdf-icon-shortcode {
+					float: left;
+				}
+
+				.eltdf-is-content.eltdf-with-icon {
+					padding: 0 0 0 55px;
+					text-align: left;
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Item Showcase shortcode responsive style - end
+   ========================================================================== */

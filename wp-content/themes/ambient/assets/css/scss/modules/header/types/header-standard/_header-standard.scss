@@ -1,0 +1,33 @@
+.eltdf-header-standard {
+
+	.eltdf-menu-area {
+
+		&.eltdf-menu-center {
+
+			.eltdf-vertical-align-containers {
+
+				.eltdf-position-center-inner {
+					height: 100%;
+				}
+			}
+		}
+
+		&.eltdf-menu-right {
+
+			.eltdf-main-menu {
+				width: auto;
+			}
+
+			.eltdf-vertical-align-containers {
+
+				.eltdf-position-right-inner {
+					height: 100%;
+				}
+			}
+		}
+
+		.eltdf-grid {
+			height: 100%;
+		}
+	}
+}

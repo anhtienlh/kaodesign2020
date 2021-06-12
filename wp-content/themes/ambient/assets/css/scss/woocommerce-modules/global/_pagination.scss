@@ -1,0 +1,99 @@
+/* ==========================================================================
+   WooCommerce Pagination styles - begin
+   ========================================================================== */
+
+.woocommerce-pagination {
+	@include eltdfRelativeHolderLayout();
+	margin: 0 0 55px;
+    padding: 0;
+	clear: both;
+
+    .page-numbers {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+	    text-align: center;
+
+        li {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0;
+
+            a,
+            span {
+                position: relative;
+                display: inline-block;
+	            width: auto;
+                margin: 0 4px;
+                padding: 0;
+                vertical-align: middle;
+                text-decoration: none;
+                cursor: pointer;
+                white-space: nowrap;
+                font-size: 16px;
+	            line-height: 46px;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: $default-text-color;
+                @include eltdfTransition(color .2s ease-out);
+
+                &:hover,
+                &.current {
+                    color: $first-main-color;
+                }
+            }
+
+            a {
+
+                &.next,
+                &.prev {
+                    font-size: 0px;
+                    line-height: 1;
+
+                    &:before {
+                        display: block;
+                        font-family: 'Ionicons';
+                        font-size: 46px;
+                        line-height: inherit;
+	                    font-weight: normal;
+                        -webkit-font-smoothing: antialiased;
+                        -moz-osx-font-smoothing: grayscale;
+                    }
+                }
+
+                &.prev {
+	                
+                    &:before {
+                        content: "\f3d5";
+                    }
+                }
+
+                &.next {
+	                
+                    &:before {
+                        content: "\f3d6";
+                    }
+                }
+            }
+	        
+	        &.eltdf-prev-arrow {
+		        position: absolute;
+		        top: 0;
+		        left: 0;
+	        }
+	
+	        &.eltdf-next-arrow {
+		        position: absolute;
+		        top: 0;
+		        right: 0;
+	        }
+        }
+    }
+}
+/* ==========================================================================
+   WooCommerce Pagination styles - end
+   ========================================================================== */

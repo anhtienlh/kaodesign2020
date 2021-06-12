@@ -1,0 +1,231 @@
+/* ==========================================================================
+   Twitter widget style - begin
+   ========================================================================== */
+.widget.widget_eltdf_twitter_widget {
+    position: relative;
+    margin: 0 0 20px;
+
+    &:before {
+        content: "\e094";
+        position: absolute;
+        top: 1px;
+        right: 20px;
+        display: block;
+        font-family: 'ElegantIcons';
+        font-size: 106px;
+        line-height: 1em;
+        color: #f3f3f3;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    > h4 {
+        margin: 0 0 9px;
+    }
+
+    .eltdf-twitter-widget {
+        @include eltdfRelativeHolderLayout();
+        margin: 0;
+
+        li {
+            @include eltdfRelativeHolderLayout();
+
+            &:not(:last-child) {
+                margin: 0 0 12px !important;
+            }
+
+            .eltdf-tweet-text {
+                position: relative;
+
+                a {
+                    position: relative;
+                    line-height: inherit;
+                    color: inherit;
+
+                    &.eltdf-tweet-time {
+                        display: block;
+
+                        span {
+                            margin: 0 2px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.eltdf-twitter-standard {
+
+            li {
+
+                .eltdf-twitter-icon {
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+
+                    i {
+                        font-size: 18px;
+                    }
+                }
+
+                .eltdf-tweet-text {
+                    padding: 0 0 0 28px;
+                    font-size: 15px;
+
+                    a,
+                    span {
+                        color: $default-heading-color;
+                    }
+
+                    a {
+
+                        &:hover {
+                            color: $first-main-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.eltdf-twitter-slider {
+            @include eltdfRelativeHolderLayout();
+            position:static;
+            padding: 0 50px;
+            text-align: center;
+            visibility: hidden;
+            @include eltdfBoxSizing(border-box);
+
+            li {
+                overflow: hidden;
+
+                .eltdf-twitter-icon {
+
+                    i {
+                        font-size: 16px;
+                        color: $first-main-color;
+                    }
+                }
+
+                .eltdf-tweet-text {
+                    font-size: 14px;
+
+                    a,
+                    span {
+                        color: $first-main-color;
+                    }
+
+                    a {
+
+                        &:hover {
+                            color: $default-heading-color;
+                        }
+
+                        &.eltdf-tweet-time {
+                            margin: 21px 0 0;
+                            font-family: $first-main-font;
+                            font-weight: 400;
+                            font-size: inherit;
+                            font-style: italic;
+                        }
+                    }
+                }
+            }
+
+            .owl-stage-outer {
+                z-index: 1;
+            }
+
+            .owl-nav {
+
+                .owl-prev,
+                .owl-next {
+                    position: absolute;
+                    top: 50%;
+                    z-index: 3;
+                    @include eltdfTransform(translateY(-50%));
+
+                    &:hover {
+
+                        .eltdf-prev-icon {
+                            @include eltdfAnimation(shake-left 2s infinite cubic-bezier(.53,.01,.18,1));
+                        }
+
+                        .eltdf-next-icon {
+                            @include eltdfAnimation(shake-right 2s infinite cubic-bezier(.53,.01,.18,1));
+                        }
+                    }
+                }
+
+                .owl-prev {
+                    left: 0;
+                }
+
+                .owl-next {
+                    right: 0;
+                }
+
+                .eltdf-prev-icon,
+                .eltdf-next-icon {
+                    position: relative;
+                    display: inline-block;
+                    vertical-align: middle;
+                    color: $default-heading-color;
+                    @include eltdfTransition(color .2s ease-out);
+
+                    .eltdf-icon-arrow {
+                        position: relative;
+                        display: inline-block;
+                        vertical-align: top;
+                        font-size: 46px;
+                        line-height: 1em;
+
+                        &:before {
+                            position: relative;
+                            display: inline-block;
+                            vertical-align: top;
+                            line-height: inherit;
+                        }
+                    }
+                }
+            }
+
+            .owl-dots {
+                text-align: center;
+                margin: 36px 0 0;
+
+                .owl-dot {
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    span {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 12px;
+                        height: 12px;
+                        margin: 0 6px;
+                        border-radius: 3em;
+                        background-color: transparent;
+                        border: 2px solid rgba($default-heading-color, .5);
+                        @include eltdfTransition(background-color .2s ease-out, border .2s ease-out);
+                        @include eltdfBoxSizing(border-box);
+                    }
+
+                    &:hover,
+                    &.active {
+
+                        span {
+                            background-color: $default-heading-color;
+                            border-color: $default-heading-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Twitter widget style - end
+   ========================================================================== */

@@ -1,0 +1,1 @@
+<?php ambient_elated_get_footer(); ?>

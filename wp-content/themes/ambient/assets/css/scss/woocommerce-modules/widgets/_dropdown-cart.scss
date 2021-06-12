@@ -1,0 +1,307 @@
+/* ==========================================================================
+   WooCommerce Dropdown Cart styles - begin
+   ========================================================================== */
+
+.eltdf-shopping-cart-holder {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 10px 0 0;
+
+	.touch & {
+		cursor: pointer;
+	}
+
+	.eltdf-shopping-cart-inner {
+		position: relative;
+		display: table;
+		height: 100%;
+	}
+
+	.eltdf-header-cart {
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+		line-height: 1;
+
+		.eltdf-cart-icon {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			top: -2px;
+			font-size: 19px;
+			line-height: 1em;
+
+			&:before {
+				display: block;
+				line-height: inherit;
+			}
+		}
+
+		.eltdf-cart-number {
+			position: absolute;
+			top: -5px;
+			right: -5px;
+			width: 14px;
+			height: 14px;
+			font-family: $first-main-font;
+			font-size: 10px;
+			line-height: 13px;
+			text-align: center;
+			background-color: $first-main-color;
+			border-radius: 3em;
+			font-weight: 600;
+
+			span {
+				display: block;
+				color: #fff;
+				line-height: inherit;
+			}
+		}
+	}
+
+	&:hover {
+
+		.eltdf-shopping-cart-dropdown {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+
+.eltdf-dark-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-shopping-cart-holder .eltdf-header-cart {
+	color: $header-dark-color;
+
+	&:hover {
+		color: $header-dark-hover-color;
+	}
+
+	.eltdf-cart-number {
+
+		span {
+			color: $header-dark-color;
+		}
+	}
+}
+
+.eltdf-light-header .eltdf-page-header > div:not(.eltdf-sticky-header):not(.fixed) .eltdf-shopping-cart-holder .eltdf-header-cart {
+	color: $header-light-color;
+
+	&:hover {
+		color: $header-light-hover-color;
+	}
+
+	.eltdf-cart-number {
+
+		span {
+			color: $header-light-color;
+		}
+	}
+}
+
+.eltdf-shopping-cart-dropdown {
+	position: absolute;
+	top: calc(100% + 29px);
+	left: auto;
+	right: 0;
+	width: 300px;
+	visibility: hidden;
+	opacity: 0;
+	background-color: #fff;
+	text-align: left;
+	z-index: 1000;
+	border-top: 2px solid $first-main-color;
+	@include eltdfBoxSizing(border-box);
+	@include eltdfBoxShadow(0px 5px 5px 0px rgba(0, 0, 0, 0.03));
+	@include eltdfTransition(all 0.35s cubic-bezier(.53, .01, .18, 1));
+
+	.eltdf-sticky-header & {
+		top: calc(100% + 20px);
+	}
+
+	ul {
+		margin: 18px;
+		padding: 13px 0 16px;
+
+		li {
+			@include eltdfTableLayout;
+			padding: 8px 0;
+			@include eltdfBoxSizing(border-box);
+
+			&:first-child {
+				padding-top: 0;
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+
+			&.eltdf-empty-cart {
+				color: $default-text-color;
+			}
+		}
+	}
+
+	.eltdf-item-image-holder {
+		position: relative;
+		display: table-cell;
+		height: 100%;
+		width: 78px;
+		vertical-align: top;
+
+		img {
+			display: block;
+		}
+	}
+
+	.eltdf-item-info-holder {
+		@include eltdfTableCellLayout;
+		vertical-align: middle;
+		padding-left: 18px;
+
+		.eltdf-product-title {
+			display: block;
+			margin: 0;
+			padding: 0 20px 0 0;
+			@include eltdfBoxSizing(border-box);
+			text-transform: uppercase;
+			color: #363636;
+			font-weight: 600;
+		}
+
+		.remove {
+			position: absolute;
+			top: -3px;
+			right: 2px;
+			width: 18px;
+			height: 18px;
+			color: $default-text-color;
+			font-size: 18px;
+			line-height: 18px;
+			text-align: center;
+
+			span {
+				display: block;
+				line-height: inherit;
+
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+
+			&:hover {
+				color: $default-heading-color;
+			}
+		}
+
+		.eltdf-quantity {
+			display: block;
+			margin: 0;
+			color: #808285;
+			font-size: 13px;
+			font-family: $first-main-font;
+		}
+	}
+
+	.eltdf-cart-bottom {
+		margin: 22px 0 0;
+		padding: 17px 0 0;
+		border-top: 1px solid $default-border-color;
+
+		.eltdf-subtotal-holder {
+			position: relative;
+			display: table;
+			width: 100%;
+			margin: 0 0 26px;
+			font-family: $first-main-font;
+
+			> * {
+				display: table-cell;
+				vertical-align: top;
+				color: #363636;
+				line-height: 20px;
+				font-weight: 600;
+			}
+
+			.eltdf-total {
+				font-size: 13px;
+				letter-spacing: 1px;
+			}
+
+			.eltdf-total-amount {
+				text-align: right;
+				font-size: 18px;
+				font-weight: 300;
+				color: #000;
+			}
+		}
+
+		.eltdf-cart-description {
+			@include eltdfRelativeHolderLayout();
+			margin: 0 0 10px;
+
+			.eltdf-cart-description-inner {
+				position: relative;
+				display: table;
+				width: 100%;
+				height: 100%;
+				padding: 17px 30px;
+				background-color: #f4f4f4;
+				text-align: center;
+				@include eltdfBoxSizing(border-box);
+
+				span {
+					position: relative;
+					display: table-cell;
+					width: 100%;
+					height: 100%;
+					vertical-align: middle;
+					color: $default-heading-color;
+					font-size: 12px;
+					line-height: 18px;
+					font-weight: 400;
+				}
+			}
+		}
+
+		.eltdf-checkout {
+			background-color: $default-heading-color;
+			border-color: $default-heading-color;
+			padding-left: 33px;
+			padding-right: 33px;
+			font-size: 10px;
+			margin-right: 12px;
+			@include eltdfTransition(all 0.15s ease-out);
+
+			&:hover {
+				background-color: transparent !important;	//!important rule in order to override default button styles
+				color: $default-heading-color !important;	//!important rule in order to override default button styles
+			}
+		}
+
+		.eltdf-view-cart {
+			padding-left: 33px;
+			padding-right: 33px;
+			font-size: 10px;
+			float: right;
+
+			&:hover {
+				background-color: transparent !important;	//!important rule in order to override default button styles
+				color: $default-heading-color !important;	//!important rule in order to override default button styles
+			}
+		}
+
+	}
+}
+
+.eltdf-vertical-menu-area {
+
+	.eltdf-shopping-cart-dropdown {
+		display: none !important;
+	}
+}
+
+/* ==========================================================================
+   WooCommerce Dropdown Cart styles - end
+   ========================================================================== */

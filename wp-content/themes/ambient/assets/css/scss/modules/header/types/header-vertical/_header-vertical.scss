@@ -1,0 +1,62 @@
+@import "blocks/logo";
+@import "blocks/widgets";
+@import "blocks/navigation/navigation";
+
+.eltdf-header-vertical {
+
+    .eltdf-content,
+    footer {
+        padding-left: $vertical-menu-width;
+        @include eltdfBoxSizing(border-box);
+    }
+
+    .eltdf-vertical-menu-area {
+        position: fixed;
+        width: $vertical-menu-width;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding: 60px 61px 10px 52px;
+        background-color: transparent;
+        outline: none;
+        z-index: 101;
+        -webkit-backface-visibility: hidden;
+        @include eltdfBoxSizing(border-box);
+    }
+
+    .eltdf-vertical-menu-area-inner {
+        @include eltdfRelativeHolderLayout();
+        height: 100%;
+
+        &.eltdf-vertical-align-left {
+            text-align: left;
+        }
+
+        &.eltdf-vertical-align-center {
+            text-align: center;
+
+            .eltdf-logo-wrapper img {
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .eltdf-vertical-menu-area.eltdf-with-scroll {
+        overflow: hidden;
+    }
+
+    .eltdf-vertical-area-background {
+        position: fixed;
+        width: $vertical-menu-width;
+        height: 100%;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-color: #373737;
+        background-size: cover;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        opacity: 1;
+        @include eltdfTransition(opacity 0.5s ease, background-color 0.5s ease);
+    }
+}

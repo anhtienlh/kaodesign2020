@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Dropcaps shortcode style - begin
+   ========================================================================== */
+
+.eltdf-dropcaps {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    font-size: 44px;
+    line-height: 44px;
+    color: $default-heading-color;
+    text-align: center;
+    margin: 0 7px 0 0;
+
+    &.eltdf-square {
+        height: 40px;
+        width: 40px;
+        font-size: 24px;
+        line-height: 40px;
+        font-weight: 600;
+        color: #fff;
+        background-color: $default-heading-color;
+        margin: 6px 9px 0 0;
+        @include eltdfBoxSizing(border-box);
+    }
+
+    &.eltdf-circle {
+        @extend .eltdf-square;
+        border-radius: 3em;
+    }
+}
+/* ==========================================================================
+   Dropcaps shortcode style - end
+   ========================================================================== */

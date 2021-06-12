@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Elements Holder Responsive start style
+   ========================================================================== */
+
+$responsive-stages: (1440, 1280, 1024, 768, 600, 480);
+
+.eltdf-elements-holder {
+	@each $stage in $responsive-stages {
+		&.eltdf-responsive-mode-#{$stage} {
+			.eltdf-elements-holder-item {
+				@media only screen and (max-width: #{$stage}px) {
+					width: 100%;
+					display: inline-block;
+					height: auto;
+				}
+
+				&.eltdf-horizontal-alignment-left {
+					@media only screen and (max-width: #{$stage}px) {
+						width: 100%;
+						display: inline-block;
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+	.eltdf-elements-holder-item-content {
+		@media only screen and (max-width: 480px) {
+			padding: 0 10px;
+		}
+	}
+
+}
+
+@each $stage in $responsive-stages {
+	@media only screen and (max-width: #{$stage}px) {
+		.eltdf-elements-holder.eltdf-responsive-mode-#{$stage}.eltdf-one-column-alignment-left .eltdf-elements-holder-item .eltdf-elements-holder-item-content {
+			text-align: left;
+		}
+		.eltdf-elements-holder.eltdf-responsive-mode-#{$stage}.eltdf-one-column-alignment-right .eltdf-elements-holder-item .eltdf-elements-holder-item-content {
+			text-align: right;
+		}
+		.eltdf-elements-holder.eltdf-responsive-mode-#{$stage}.eltdf-one-column-alignment-center .eltdf-elements-holder-item .eltdf-elements-holder-item-content {
+			text-align: center;
+		}
+	}
+}
+
+/* ==========================================================================
+   End of Elements Holder Responsive style
+   ========================================================================== */

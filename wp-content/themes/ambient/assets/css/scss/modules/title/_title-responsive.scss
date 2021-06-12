@@ -1,0 +1,127 @@
+@include ipad-landscape {
+
+	.eltdf-title {
+
+		&.eltdf-title-custom-font-style {
+
+			.eltdf-title-text {
+				line-height: 1.05em;
+
+				span {
+					font-size: 0.9em;
+				}
+			}
+		}
+
+		&.eltdf-has-background {
+			background: rgba(0, 0, 0, 0) none repeat scroll 0 0 !important;
+			height: auto !important;
+			padding: 0 !important;
+		}
+
+		&.eltdf-title-image-not-responsive {
+
+			.eltdf-title-image {
+				display: block;
+			}
+		}
+
+		.eltdf-title-holder {
+			height: 100% !important;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 0 !important;
+
+			.eltdf-container {
+				display: block;
+				height: 100%;
+			}
+
+			.eltdf-container-inner {
+				display: table;
+				height: 100%;
+			}
+
+			.eltdf-title-subtitle-holder {
+				display: table-cell;
+				vertical-align: middle;
+				width: 100%;
+				padding: 0px !important;
+			}
+		}
+
+		&.eltdf-breadcrumbs-type {
+
+			&.eltdf-content-center-alignment {
+
+				.eltdf-title-subtitle-holder {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					@include eltdfTransform(translateY(-50%));
+				}
+			}
+
+			&:not(.eltdf-content-center-alignment) {
+
+				.eltdf-title-text,
+				.eltdf-breadcrumbs-holder {
+					display: block;
+					width: 100%;
+					white-space: normal;
+				}
+
+				.eltdf-breadcrumbs-holder span {
+					line-height: 1.5em;
+				}
+
+				.eltdf-title-text {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+
+	.eltdf-title {
+
+		&.eltdf-standard-type {
+
+			.eltdf-subtitle {
+				display: none;
+			}
+		}
+
+		&.eltdf-title-custom-font-style {
+
+			.eltdf-title-text {
+				line-height: 0.95em;
+
+				span {
+					font-size: 0.8em;
+				}
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+
+	.eltdf-title {
+
+		&.eltdf-title-custom-font-style {
+
+			.eltdf-title-text {
+				line-height: 0.85em;
+
+				span {
+					font-size: 0.7em;
+				}
+			}
+		}
+	}
+}

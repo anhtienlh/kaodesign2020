@@ -1,0 +1,36 @@
+/* ==========================================================================
+   WooCommerce Quantity Inputs responsive styles - begin
+   ========================================================================== */
+
+@include ipad-portrait {
+    
+    .woocommerce-page .eltdf-content,
+    div.woocommerce {
+
+        .eltdf-quantity-buttons {
+
+            .eltdf-quantity-input,
+            .eltdf-quantity-minus,
+            .eltdf-quantity-plus {
+                font-size: 14px;
+            }
+
+            .eltdf-quantity-input {
+                height: 46px;
+                width: 46px;
+                margin: 0 23px 0 0;
+                line-height: 44px;
+            }
+
+            .eltdf-quantity-minus,
+            .eltdf-quantity-plus {
+                width: 23px;
+                height: 23px;
+                line-height: 21px;
+            }
+        }
+    }
+}   
+/* ==========================================================================
+   WooCommerce Quantity Inputs responsive styles - end
+   ========================================================================== */

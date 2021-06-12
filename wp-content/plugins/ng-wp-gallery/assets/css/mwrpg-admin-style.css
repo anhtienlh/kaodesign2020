@@ -1,0 +1,32 @@
+.mwrp-gallery-data-list li{
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    height: 150px;
+    width: 110px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #f1f1f1;
+    background-color: #fff;
+    cursor: move;
+}
+#mwrpg_images .ng_gallery_img{
+    max-width: 100%;
+    height: 110px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.img-option {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #ccc;
+}
+.img-option a{
+    Cursor:pointer;
+    margin:10px 0;
+}
+.mwrp_gallery_images {
+    padding:10px 0 35px;
+}

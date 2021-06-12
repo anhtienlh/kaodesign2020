@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Blog List widget style - begin
+   ========================================================================== */
+
+.widget.eltdf-blog-list-widget {
+
+	> h4 {
+		margin: 0 0 19px;
+	}
+
+	footer .eltdf-footer-top &,
+	.eltdf-top-bar & {
+
+		> h2 {
+			margin: 0 0 8px;
+		}
+
+		color: #969696;
+
+		a {
+			color: #969696;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+
+	.eltdf-sidebar &, .wpb_widgetised_column & {
+		.eltdf-blog-list-holder {
+			.eltdf-bli-title {
+				color: #b4b4b4;
+				font-size: 13px;
+				line-height: 25px;
+			}
+
+			.eltdf-bli-info {
+				margin-top: -19px;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Blog List widget style - end
+   ========================================================================== */

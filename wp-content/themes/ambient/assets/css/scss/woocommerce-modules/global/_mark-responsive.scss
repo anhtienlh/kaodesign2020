@@ -1,0 +1,36 @@
+/* ==========================================================================
+   WooCommerce Onsale and Out of Stock responsive styles - begin
+   ========================================================================== */
+
+@include ipad-landscape {
+
+    .eltdf-woo-single-page {
+	
+	    .eltdf-single-product-content {
+		
+		    .eltdf-out-of-stock,
+		    .eltdf-new-product {
+			    right: 10px;
+		    }
+	    }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+	
+	.eltdf-woo-single-page {
+		
+		&.eltdf-woo-single-thumb-on-left-side {
+			
+			.eltdf-single-product-content {
+				
+				.eltdf-onsale {
+					left: 10px;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   WooCommerce Onsale and Out of Stock responsive styles - end
+   ========================================================================== */

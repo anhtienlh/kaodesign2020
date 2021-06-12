@@ -1,0 +1,60 @@
+/* ==========================================================================
+   Progress Bar shortcode style - begin
+   ========================================================================== */
+
+.eltdf-progress-bar {
+    @include eltdfRelativeHolderLayout();
+    
+    .eltdf-pb-title-holder {
+        position: relative;
+        margin: 6px 0 5px;
+        
+        .eltdf-pb-title {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            z-index: 100;
+        }
+    }
+    
+    span.eltdf-pb-title-holder {
+	    display: block;
+        font-family: $first-main-font;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: #fff;
+    }
+	
+    .eltdf-pb-percent {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: auto;
+	    display: inline-block;
+	    vertical-align: middle;
+	    opacity: 0;
+	    z-index: 10;
+        
+        &:after {
+            content: '%';
+        }
+    }
+    
+    .eltdf-pb-content-holder {
+        position: relative;
+        height: 3px;
+        overflow: hidden;
+        background-color: #5f5f5f;
+        
+        .eltdf-pb-content {
+            height: 3px;
+            max-width: 100%;
+            overflow: hidden;
+            background-color: $first-main-color;
+        }
+    }
+}
+/* ==========================================================================
+   Progress Bar shortcode style - end
+   ========================================================================== */

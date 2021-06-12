@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Portfolio Single Big Images style - begin
+   ========================================================================== */
+
+.big-images {
+    margin: 0 0 70px;
+
+    .eltdf-big-image-holder {
+        margin: 0 0 52px;
+    }
+
+    .eltdf-portfolio-media .eltdf-portfolio-single-media {
+        margin: 0 0 30px;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        a, img {
+            display: block;
+        }
+    }
+
+    .eltdf-ps-navigation {
+        margin: 33px 0 0;
+    }
+}
+
+@include ipad-landscape {
+
+    .big-images .eltdf-portfolio-info-holder {
+        padding: 0 !important;
+    }
+}
+/* ==========================================================================
+   Portfolio Single Big Images style - end
+   ========================================================================== */

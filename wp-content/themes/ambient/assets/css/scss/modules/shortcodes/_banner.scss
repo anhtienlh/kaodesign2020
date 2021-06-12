@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Banner shortcode style - begin
+   ========================================================================== */
+
+.eltdf-banner-holder {
+    @include eltdfRelativeHolderLayout();
+	overflow:hidden;
+	backface-visibility: hidden;
+
+	.eltdf-banner-image {
+		@include eltdfRelativeHolderLayout();
+
+		img {
+			display: block;
+			@include eltdfTransition(all 0.4s);
+			@include eltdfTransform(scale(1));
+			backface-visibility: hidden;
+		}
+	}
+
+	.eltdf-banner-overlay {
+		@include eltdfAbsoluteHolderLayout();
+	}
+
+	.eltdf-banner-text-holder {
+		@include eltdfTableLayout;
+	}
+	
+	.eltdf-banner-text-inner {
+		@include eltdfTableCellLayout();
+		@include eltdfBoxSizing(border-box);
+		vertical-align: top;
+		padding: 7%;
+		
+		@include laptop-landscape {
+			padding: 6% 4% 4% 7%;
+		}
+		
+		@include ipad-portrait {
+			padding: 25px 30px;
+		}
+	}
+	
+	.eltdf-banner-subtitle {
+		margin: 0;
+	}
+	
+	.eltdf-banner-title {
+		margin: 4px 0 0;
+	}
+	
+	.eltdf-banner-text {
+		margin: 14px 0 0;
+		line-height: 1em;
+	}
+	
+	.eltdf-banner-link {
+		@include eltdfAbsoluteHolderLayout();
+		z-index: 1;
+	}
+
+	&:hover {
+		.eltdf-banner-image img {
+			@include eltdfTransform(scale(1.04));
+		}
+	}
+}
+/* ==========================================================================
+   Banner shortcode style - end
+   ========================================================================== */

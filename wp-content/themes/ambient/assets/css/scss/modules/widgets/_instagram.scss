@@ -1,0 +1,140 @@
+/* ==========================================================================
+   Instagram widget style - begin
+   ========================================================================== */
+
+.widget.widget_eltdf_instagram_widget {
+
+    > h4 {
+        margin: 0 0 20px;
+    }
+}
+
+.eltdf-instagram-feed {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        float: left;
+        @include eltdfBoxSizing(border-box);
+
+        a {
+            position: relative;
+            display: block;
+            overflow: hidden;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background-color: rgba(12,12,12,.5);
+                opacity: 0;
+                @include eltdfTransition(opacity .15s ease-out);
+            }
+
+            &:hover {
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    &.eltdf-instagram-gallery {
+
+        $gallery_space_label: ('no', 'tiny', 'small', 'normal');
+        $gallery_space_width: (0, 5, 10, 15);
+        
+        @for $i from 0 to length($gallery_space_label) {
+            &.eltdf-#{nth($gallery_space_label,$i+1)}-space {
+                $column_width: nth($gallery_space_width,$i+1);
+                $column_width_margin: $column_width * 2;
+                
+                @if($column_width == 0) {
+                    margin: 0;
+                } @else {
+                    margin: 0 -#{$column_width}px -#{$column_width_margin}px;
+                }
+                
+                li {
+                    padding: 0 #{$column_width}px;
+                    margin: 0 0 #{$column_width_margin}px;
+                }
+            }
+        }
+
+        $gallery_columns: ('2', '3', '4', '6', '9');
+        @for $i from 0 to length($gallery_columns) {
+            &.eltdf-col-#{nth($gallery_columns, $i+1)} {
+                $column_width: 100%/($i+2);
+
+                @if($i == 3) {
+                    $column_width: 100%/6;
+                } @else if ($i == 4){
+                    $column_width: 100%/9;
+                }
+                
+                li {
+                    width: $column_width;
+                }
+            }
+        }
+    }
+
+    &.eltdf-instagram-carousel {
+        opacity: 0; //opacity 1 via JS
+
+        li {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            img {
+                display: block;
+            }
+
+            a {
+                position: relative;
+                display: block;
+                height: 100%;
+
+                &:after {
+                    content: "\f16d";
+                    font-family: FontAwesome;
+                    font-size: 30px;
+                    color: $default-heading-color;
+                    padding: 10px 10px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    @include eltdfTransition(all 0.35s cubic-bezier(.53,.01,.18,1));
+                    @include eltdfTransform(translate3d(-5%,-5%,0) scale(2,1));
+                }
+
+                &:hover {
+
+                    &:after {
+                        opacity: 1;
+                        @include eltdfTransform(translate3d(0,0,0));
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Instagram widget style - end
+   ========================================================================== */

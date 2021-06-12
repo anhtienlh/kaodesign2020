@@ -1,0 +1,988 @@
+/* #Reset default styles - start
+   ========================================================================== */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	outline: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, nav, section {
+	display: block;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: medium none;
+	vertical-align: middle;
+}
+
+table th {
+	border: 0;
+	padding: 5px 7px;
+	text-align: center;
+}
+
+table td {
+	padding: 5px 10px;
+	text-align: center;
+}
+
+a img {
+	border: none;
+}
+
+img, .wp-caption {
+	max-width: 100%;
+	height: auto;
+}
+
+iframe {
+	max-width: 100%;
+}
+
+/* #Reset default styles - end
+   ========================================================================== */
+
+/* #General styles that are used in our theme - start
+ * Here are defined global styles on body element, on container elements that hold every page,
+ * headings and links, inputs, core wp styles and default pagination styles
+   ========================================================================== */
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+.clear:after {
+	clear: both;
+	content: "";
+	display: block;
+}
+
+html {
+	overflow-y: scroll !important; /* for vertical split screen slider shortcode on touch devices */
+}
+
+body {
+	font-family: $default-text-font;
+	font-weight: 300;
+	font-size: 14px;
+	line-height: 27px;
+	color: $default-text-color;
+	background-color: $default-background-color;
+	overflow-x: hidden !important;
+}
+
+h1 {
+	font-size: 70px;
+	font-weight: 300;
+	line-height: 72px;
+}
+
+h2 {
+	font-size: 45px;
+	font-weight: 300;
+	line-height: 48px;
+}
+
+h3 {
+	font-size: 30px;
+	font-weight: 300;
+	line-height: 37px;
+}
+
+h4 {
+	font-size: 21px;
+	font-weight: 400;
+	line-height: 28px;
+}
+
+h5 {
+	font-family: $default-text-font;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 30px;
+}
+
+h6 {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 23px;
+	letter-spacing: 0.5px;
+	text-transform: capitalize;
+}
+
+h1, h2, h3, h4, h6 {
+	font-family: $first-main-font;
+}
+
+h1, h2, h3, h4 {
+	color: $default-heading-color;
+}
+
+h5, h6 {
+	color: $default-text-color;
+}
+
+h1 {
+	margin: 25px 0;
+}
+
+h5 {
+	margin: 10px 0;
+}
+
+h2, h3, h4, h6 {
+	margin: 15px 0;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	@include eltdfTypographyLayout();
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+	color: $first-main-color;
+}
+
+a,
+p a {
+	color: $default-heading-color;
+	text-decoration: none;
+	@include eltdfTransition(color .15s ease-out);
+
+	&:hover {
+		color: $first-main-color;
+	}
+}
+
+p {
+	margin: 10px 0;
+}
+
+input[type='submit'] {
+	-webkit-appearance: none;
+}
+
+ul, ol {
+	list-style-position: inside;
+	margin: 15px 0;
+}
+
+ul ul,
+ol ol,
+ol ul,
+ul ol {
+	margin: 0;
+	padding: 0 0 0 15px;
+}
+
+pre {
+	background-color: $default-background-color;
+	padding: 15px;
+	max-width: 100%;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	margin: 15px 0;
+}
+
+dt {
+	font-size: 15px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+dd {
+	margin-bottom: 15px;
+}
+
+sub, sup {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+sup {
+	bottom: 0.5ex;
+}
+
+.wp-caption-text {
+	margin: 0;
+	font-style: italic;
+}
+
+table {
+	width: 100%;
+}
+
+table thead tr, table tbody tr {
+	border: 1px solid $default-border-color;
+}
+
+table tbody th {
+	border-right: 1px solid $default-border-color;
+}
+
+blockquote {
+	@include eltdfRelativeHolderLayout();
+	margin: 10px 0;
+	padding: 0;
+	font-family: $first-main-font;
+	font-weight: 300;
+	font-size: 21px;
+	line-height: 27px;
+	text-align: center;
+	quotes: none;
+	@include eltdfBoxSizing(border-box);
+
+	> * {
+		@include eltdfTypographyLayout();
+		margin: 0;
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		content: none;
+	}
+
+	cite {
+		font-style: normal;
+		font-weight: 400;
+	}
+}
+
+/* Webkit */
+::selection {
+	background: $first-main-color;
+	color: $default-background-color;
+}
+
+/* Gecko/Mozilla */
+::-moz-selection {
+	background: $first-main-color;
+	color: $default-background-color;
+}
+
+.wp-caption,
+.wp-caption-text,
+.sticky,
+.gallery-caption,
+.bypostauthor {
+	opacity: 1;
+}
+
+.alignleft {
+	float: left;
+	margin: 0 20px 20px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+
+.aligncenter {
+	display: block;
+	margin: 10px auto;
+}
+
+.alignwide {
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+}
+
+@include ipad-landscape {
+
+	.alignwide {
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+.alignfull {
+	position: relative;
+	left: -1rem;
+	width: calc( 100% + (2 * 1rem));
+	max-width: calc( 100% + (2 * 1rem));
+	clear: both;
+}
+
+@include ipad-landscape {
+
+	.alignfull {
+		left: calc( -12.5% - 75px);
+		width: calc( 125% + 150px);
+		max-width: calc( 125% + 150px);
+		margin-top: calc(2 * 1rem);
+		margin-bottom: calc(2 * 1rem);
+	}
+}
+
+.text-align-right {
+	text-align: right;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.text-align-center {
+	text-align: center;
+}
+
+.eltdf-wrapper {
+	position: relative;
+	left: 0px;
+	z-index: 1000;
+
+	.eltdf-wrapper-inner {
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
+.eltdf-meta {
+	display: none;
+}
+
+.eltdf-content {
+	position: relative;
+	margin-top: 0;
+	z-index: 100;
+	background-color: $default-background-color; /*this is needed because of the uncovering footer*/
+}
+
+/*visual composer override styles*/
+.wpb_row, .wpb_content_element,
+ul.wpb_thumbnails-fluid > li,
+.last_toggle_el_margin, .wpb_button {
+	margin-bottom: 0 !important; // important is in order to prevent visual composer styles in all cases
+}
+
+.eltdf-boxed {
+	overflow: hidden !important; /* this is because content jumping while using accordion and display:inline-block on 'body.eltdf-boxed .eltdf-wrapper'   */
+
+	.eltdf-wrapper {
+		display: inline-block;
+		vertical-align: middle;
+		width: 100%;
+
+		.eltdf-wrapper-inner {
+			width: $grid-width-boxed;
+			overflow: visible;
+			margin: auto;
+		}
+	}
+
+	.eltdf-content {
+		overflow: hidden;
+	}
+
+	.eltdf-footer-inner {
+		width: $grid-width-boxed;
+		margin: auto;
+	}
+
+	.eltdf-page-header .eltdf-sticky-header,
+	.eltdf-page-header .eltdf-fixed-wrapper.fixed {
+		width: $grid-width-boxed;
+		left: auto;
+	}
+}
+
+.eltdf-paspartu-enabled {
+
+	.eltdf-wrapper {
+		padding: 10px;
+		background-color: #fff;
+		@include eltdfBoxSizing(border-box);
+	}
+
+	&.eltdf-top-paspartu-disabled {
+
+		.eltdf-wrapper {
+			padding-top: 0 !important;
+		}
+	}
+}
+
+.eltdf-smooth-transition-loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 2000;
+	background-color: #fff;
+	opacity: 1;
+	display: block;
+}
+
+.eltdf-container {
+	background-color: #fff; //beacuse of the Elated Slider, since content have to go over it
+	position: relative;
+	padding: 0;
+	width: 100%;
+	z-index: 100;
+
+	&:before {
+		content: " ";
+		display: table;
+	}
+
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+}
+
+.eltdf-container-inner {
+	//not in parent selector since this class is used for positioning other elements in grid
+	width: $grid-width;
+	margin: 0px auto;
+}
+
+.eltdf-full-width {
+	position: relative;
+	z-index: 100;
+}
+
+@media only screen and (min-width: 1400px) {
+
+	.eltdf-grid-1300 {
+
+		.eltdf-grid,
+		.eltdf-container-inner,
+		.eltdf-row-grid-section,
+		.eltdf-footer-top-border-holder.eltdf-in-grid,
+		.eltdf-footer-bottom-border-holder.eltdf-in-grid,
+		.eltdf-drop-down .wide .second .inner > ul {
+			width: $grid-width-1300;
+		}
+
+	}
+
+	.eltdf-grid-1300.eltdf-boxed {
+
+		.eltdf-footer-inner,
+		.eltdf-wrapper-inner {
+			width: $grid-width-1300 + 50px;
+		}
+
+		.eltdf-page-header .eltdf-sticky-header,
+		.eltdf-page-header .eltdf-fixed-wrapper.fixed {
+			width: $grid-width-1300 + 50px;
+			left: auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 1300px) {
+
+	.eltdf-grid-1200 {
+
+		.eltdf-grid,
+		.eltdf-container-inner,
+		.eltdf-row-grid-section,
+		.eltdf-footer-top-border-holder.eltdf-in-grid,
+		.eltdf-footer-bottom-border-holder.eltdf-in-grid {
+			width: $grid-width-1200;
+		}
+	}
+
+	.eltdf-grid-1200.eltdf-boxed {
+
+		.eltdf-footer-inner,
+		.eltdf-wrapper-inner {
+			width: $grid-width-1200 + 50px;
+		}
+
+		.eltdf-page-header .eltdf-sticky-header,
+		.eltdf-page-header .eltdf-fixed-wrapper.fixed {
+			width: $grid-width-1200 + 50px;
+			left: auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+
+	.eltdf-grid-1000 {
+
+		.eltdf-grid,
+		.eltdf-container-inner,
+		.eltdf-row-grid-section,
+		.eltdf-footer-top-border-holder.eltdf-in-grid,
+		.eltdf-footer-bottom-border-holder.eltdf-in-grid {
+			width: $grid-width-1000;
+		}
+	}
+
+	.eltdf-grid-1000.eltdf-boxed {
+
+		.eltdf-footer-inner,
+		.eltdf-wrapper-inner {
+			width: $grid-width-1000 + 50px;
+		}
+
+		.eltdf-page-header .eltdf-sticky-header,
+		.eltdf-page-header .eltdf-fixed-wrapper.fixed {
+			width: $grid-width-1000 + 50px;
+			left: auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.eltdf-grid-800 {
+
+		.eltdf-grid,
+		.eltdf-container-inner,
+		.eltdf-row-grid-section,
+		.eltdf-footer-top-border-holder.eltdf-in-grid,
+		.eltdf-footer-bottom-border-holder.eltdf-in-grid {
+			width: $grid-width-800;
+		}
+	}
+
+	.eltdf-grid-800.eltdf-boxed {
+
+		.eltdf-footer-inner,
+		.eltdf-wrapper-inner {
+			width: $grid-width-800 + 50px;
+		}
+
+		.eltdf-page-header .eltdf-sticky-header,
+		.eltdf-page-header .eltdf-fixed-wrapper.fixed {
+			width: $grid-width-800 + 50px;
+			left: auto;
+		}
+	}
+}
+
+/* #General styles that are used in our theme - end
+   ========================================================================== */
+
+/* #Grid system styles - start
+ * Here are defined styles for grid system that is used outside Visual Composer
+   ========================================================================== */
+
+.eltdf-two-columns-form-without-space {
+
+	.eltdf-column-left {
+		display: table-cell;
+		width: 99%;
+		vertical-align: top;
+	}
+
+	.eltdf-column-right {
+		display: table-cell;
+		width: 1%;
+		text-align: left;
+		vertical-align: top;
+	}
+}
+
+.eltdf-two-columns-66-33 {
+	width: 100%;
+
+	.eltdf-column1 {
+		width: 66.66%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 42px 0 0;
+		}
+	}
+
+	.eltdf-column2 {
+		width: 33.33%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 0 0 42px;
+
+		}
+	}
+}
+
+.eltdf-two-columns-33-66 {
+	width: 100%;
+
+	.eltdf-column1 {
+		width: 66.66%;
+		float: right;
+
+		.eltdf-column-inner {
+			padding: 0 0 0 42px;
+		}
+	}
+
+	.eltdf-column2 {
+		width: 33.33%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 42px 0 0;
+		}
+	}
+}
+
+.eltdf-two-columns-75-25 {
+	width: 100%;
+
+	.eltdf-column1 {
+		width: 75%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 42px 0 0;
+		}
+	}
+
+	.eltdf-column2 {
+		width: 25%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 0 0 42px;
+		}
+	}
+}
+
+.eltdf-two-columns-25-75 {
+	width: 100%;
+
+	.eltdf-column1 {
+		width: 75%;
+		float: right;
+
+		.eltdf-column-inner {
+			padding: 0 0 0 42px;
+		}
+	}
+
+	.eltdf-column2 {
+		width: 25%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 42px 0 0;
+		}
+	}
+}
+
+.eltdf-two-columns-50-50 {
+	width: 100%;
+
+	> .eltdf-two-columns-50-50-inner {
+		margin: 0 -15px;
+	}
+
+	.eltdf-column {
+		width: 50%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 15px;
+		}
+	}
+}
+
+.eltdf-three-columns {
+	width: 100%;
+
+	> .eltdf-three-columns-inner {
+		margin: 0 -15px;
+	}
+
+	.eltdf-column {
+		width: 33.33%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 15px;
+		}
+	}
+}
+
+.eltdf-four-columns {
+	width: 100%;
+
+	> .eltdf-four-columns-inner {
+		margin: 0 -15px;
+	}
+
+	.eltdf-column {
+		width: 25%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 15px;
+		}
+	}
+}
+
+.eltdf-five-columns {
+	width: 100%;
+
+	> .eltdf-five-columns-inner {
+		margin: 0 -15px;
+	}
+
+	.eltdf-column {
+		width: 20%;
+		float: left;
+
+		.eltdf-column-inner {
+			padding: 0 15px;
+		}
+	}
+}
+
+/* #Grid system styles - end
+   ========================================================================== */
+
+@include keyframes(preload-background) {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+
+.eltdf-preload-background {
+	background-repeat: repeat !important;
+	background-color: transparent !important;
+	background-attachment: scroll !important;
+	background-size: inherit !important;
+	@include animation(preload-background, 40s, infinite, linear, 0s);
+}
+
+.eltdf-grid {
+	width: $grid-width;
+	margin: 0 auto;
+}
+
+.eltdf-vertical-align-containers {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	padding: 0 25px;
+	@include eltdfBoxSizing(border-box);
+
+	&.eltdf-25-50-25 {
+
+		.eltdf-position-left,
+		.eltdf-position-right {
+			width: 25%;
+		}
+
+		.eltdf-position-center {
+			width: 50%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			transform: translateX(-50%);
+		}
+
+		.eltdf-position-left-inner,
+		.eltdf-position-center-inner,
+		.eltdf-position-right-inner {
+			width: 98%;
+		}
+
+	}
+
+	&.eltdf-33-33-33 {
+
+		.eltdf-position-left,
+		.eltdf-position-center,
+		.eltdf-position-right {
+			width: 33.33%;
+		}
+
+		.eltdf-position-center {
+			width: 50%;
+			left: 50%;
+			-webkit-transform: translateX(-50%);
+			transform: translateX(-50%);
+		}
+
+		.eltdf-position-left-inner,
+		.eltdf-position-center-inner,
+		.eltdf-position-right-inner {
+			width: 98%;
+		}
+
+	}
+
+	&.eltdf-50-50 {
+
+		.eltdf-position-left,
+		.eltdf-position-right {
+			width: 50%;
+		}
+
+		.eltdf-position-left-inner,
+		.eltdf-position-center-inner,
+		.eltdf-position-right-inner {
+			width: 98%;
+		}
+
+	}
+
+	.eltdf-position-left {
+		position: relative;
+		float: left;
+		z-index: 2;
+		height: 100%;
+	}
+	.eltdf-position-center {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		text-align: center;
+		z-index: 1;
+	}
+
+	.eltdf-position-right {
+		position: relative;
+		float: right;
+		z-index: 2;
+		height: 100%;
+		text-align: right;
+	}
+
+	.eltdf-position-left-inner,
+	.eltdf-position-center-inner,
+	.eltdf-position-right-inner {
+		vertical-align: middle;
+		display: inline-block;
+	}
+	.eltdf-position-right.eltdf-has-widget .eltdf-position-right-inner {
+		height: 100%;
+	}
+
+	.eltdf-position-left:before,
+	.eltdf-position-center:before,
+	.eltdf-position-right:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		margin-right: 0; /* adjusts for spacing */
+	}
+
+}
+
+/* ==========================================================================
+   #Row styles - start
+   ========================================================================== */
+
+.eltdf-row-grid-section {
+	position: relative;
+	width: 1100px;
+	margin: 0 auto;
+	z-index: 20;
+}
+
+.eltdf-content-aligment-left {
+	text-align: left;
+}
+
+.eltdf-content-aligment-center {
+	text-align: center;
+}
+
+.eltdf-content-aligment-right {
+	text-align: right;
+}
+
+.vc_row .wpb_gmaps_widget .wpb_wrapper {
+	padding: 0;
+	background-color: transparent;
+}
+
+.eltdf-parallax-holder {
+	position: static;
+	padding: 0px;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center 0px;
+	background-attachment: fixed;
+	overflow: hidden;
+
+	&.eltdf-vertical-middle-align {
+		display: table;
+		width: 100%;
+		padding: 0px 15px;
+
+		.eltdf-parallax-content-outer {
+			display: table-cell;
+			height: 100%;
+			vertical-align: middle;
+			padding: 100% 0;
+		}
+	}
+
+	.touch &.eltdf-parallax-holder-touch-disabled {
+		height: auto !important;
+		background-position: center top;
+		background-attachment: scroll;
+		background-size: cover;
+	}
+}
+
+/* ==========================================================================
+   #Row styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Separator styles - start
+   ========================================================================== */
+
+.vc_separator h4 {
+	color: #808285;
+	text-transform: uppercase;
+	font-size: 13px !important;
+	letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   #Separator styles - end
+   ========================================================================== */

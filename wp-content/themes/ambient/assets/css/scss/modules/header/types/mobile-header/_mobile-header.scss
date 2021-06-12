@@ -1,0 +1,178 @@
+@import "blocks/mobile-navigation";
+
+/* ==========================================================================
+#Mobile header styles
+========================================================================== */
+.eltdf-mobile-header {
+    display: none;
+    position: relative;
+    z-index: 101; //one more thatn the content
+
+   /* #General mobile header styles
+   ========================================================================== */
+    .eltdf-mobile-header-inner {
+        position: relative;
+        height: 100px;
+        background-color: #fff;
+	    @include eltdfBoxSizing(border-box);
+
+        .eltdf-mobile-header-holder {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+        }
+    }
+
+    .eltdf-grid {
+        height: 100%;
+    }
+
+    .eltdf-vertical-align-containers {
+        padding: 0;
+    }
+
+    /* #End of general mobile header styles
+   ========================================================================== */
+
+    /* #Mobile logo styles
+    ========================================================================== */
+    .eltdf-mobile-logo-wrapper a {
+        display: block;
+    }
+
+    .eltdf-mobile-logo-wrapper img {
+        height: 100%;
+        width: auto;
+    }
+    /* #End of mobile logo styles
+    ========================================================================== */
+
+    /* #Mobile menu opener styles
+    ========================================================================== */
+    .eltdf-mobile-menu-opener {
+        float: left;
+        position: relative;
+        z-index: 2;
+        height: 100%;
+
+        a {
+            display: table;
+            height: 100%;
+            padding-right: 10px;
+
+            .eltdf-mo-lines {
+	            position: relative;
+	            display: inline-block;
+	            vertical-align: middle;
+	            width: 18px;
+	            height: 16px;
+
+	            .eltdf-mo-line {
+		            position: absolute;
+		            left: 0;
+		            height: 1px;
+		            width: 100%;
+		            background-color: currentColor;
+		            @include eltdfTransition(background-color .2s ease-out);
+		
+		            &:before {
+			            position: absolute;
+			            top: -1px;
+			            left: 0;
+			            display: block;
+			            width: 100%;
+			            height: 1px;
+			            background-color: inherit;
+			            opacity: 0.5;
+			            content: '';
+		            }
+		
+		            &.eltdf-line-1 {
+			            top: 0;
+			            outline: transparent solid 1px;
+		            }
+		
+		            &.eltdf-line-2 {
+			            top: calc(50% - 1px);
+			            outline: transparent solid 1px;
+		            }
+		
+		            &.eltdf-line-3 {
+			            top: calc(100% - 2px);
+			            outline: transparent solid 1px;
+		            }
+	            }
+            }
+
+            .eltdf-mobile-menu-text {
+                position: relative;
+                top: 0;
+                margin: 0;
+                padding-left: 3px;
+	            color: currentColor;
+            }
+
+	        &:hover {
+		        color: $first-main-color;
+	        }
+        }
+
+        .eltdf-mo-icon-holder {
+            display: table-cell;
+            vertical-align: middle;
+            line-height: 1em;
+
+            > * {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+    /* #End of mobile menu opener styles
+    ========================================================================== */
+}
+
+/* ==========================================================================
+#End of mobile header styles
+========================================================================== */
+
+/* ==========================================================================
+#Sticky mobile header styles
+========================================================================== */
+.eltdf-sticky-up-mobile-header {
+    .eltdf-animate-mobile-header {
+        .eltdf-mobile-header-inner {
+            width: 100%;
+
+			//Added left and right transition values because of sidearea transitions on open/close
+			-webkit-transition: -webkit-transform 0.4s ease-in-out, left 0.2s ease, right 0.2s ease;
+			-moz-transition: -moz-transform 0.4s ease-in-out, left 0.2s ease, right 0.2s ease;
+			-o-transition: -o-transform 0.4s ease-in-out, left 0.2s ease, right 0.2s ease;
+			transition: transform 0.4s ease-in-out, left 0.2s ease, right 0.2s ease;
+            @include eltdfTransform(translateY(-100%));
+        }
+    }
+
+    .mobile-header-appear {
+        .eltdf-mobile-header-inner {
+            top: 0;
+			left: 0;
+            width: 100%;
+            position: fixed;
+            @include eltdfTransform(translateY(0));
+        }
+    }
+
+	.mobile-header-disappear {
+		.eltdf-mobile-header-inner {
+			top: 0;
+			left: 0;
+			width: 100%;
+			position: fixed;
+			@include eltdfTransform(translateY(-100%));
+		}
+	}
+}
+/* ==========================================================================
+#End of sticky mobile header styles
+========================================================================== */

@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Masonry Gallery shortcodes responsive style - begin
+   ========================================================================== */
+
+@include ipad-landscape {
+
+	.eltdf-masonry-gallery-holder {
+
+		.eltdf-mg-grid-sizer,
+		.eltdf-mg-item {
+			width: 50%;
+		}
+
+		.eltdf-mg-item {
+
+			&.eltdf-mg-square-big,
+			&.eltdf-mg-rectangle-landscape {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 680px) {
+
+	.eltdf-masonry-gallery-holder {
+
+		.eltdf-mg-grid-sizer,
+		.eltdf-mg-item {
+			width: 100%;
+		}
+
+		.eltdf-mg-item.eltdf-mg-rectangle-landscape .eltdf-mg-image img {
+			position: relative;
+			height: 100%;
+			width: auto;
+			max-width: none;
+			left: 50%;
+			@include eltdfTransform(translateX(-50%));
+		}
+	}
+}
+
+/* ==========================================================================
+   Masonry Gallery shortcodes responsive style - end
+   ========================================================================== */

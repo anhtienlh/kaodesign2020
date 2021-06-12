@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Testimonials shortcode responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape-medium {
+	
+	.eltdf-testimonials-holder {
+		
+		&.eltdf-testimonials-boxed {
+			
+			.eltdf-testimonial-content {
+				padding: 22px 32px 39px;
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+
+	.eltdf-testimonials-holder {
+
+		.eltdf-testimonials {
+			padding: 0;
+		}
+
+		.owl-nav {
+
+			.owl-prev,
+			.owl-next {
+				display: none !important;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Testimonials shortcode responsive style - end
+   ========================================================================== */

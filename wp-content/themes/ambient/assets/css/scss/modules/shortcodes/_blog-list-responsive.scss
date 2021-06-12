@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Blog List shortcode responsive style - begin
+   ========================================================================== */
+
+@media only screen and (max-width: $laptop-landscape) {
+
+    .eltdf-blog-list-holder:not(.eltdf-masonry) {
+
+        &.eltdf-blog-list-columns-4 {
+
+            .eltdf-blog-list > li {
+                width: 33%;
+
+                &:nth-child(4n+1) {
+                    clear: none;
+                }
+
+                &:nth-child(3n+1) {
+                    clear: both;
+                }
+            }
+        }
+    }
+
+    .eltdf-blog-list-holder.eltdf-masonry {
+
+        &.eltdf-blog-list-columns-4 {
+
+            .eltdf-blog-list > li,
+            .eltdf-blog-masonry-grid-sizer {
+                width: 33%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $ipad-landscape) {
+
+    .eltdf-blog-list-holder:not(.eltdf-masonry) {
+
+        &.eltdf-blog-list-columns-3,
+        &.eltdf-blog-list-columns-4 {
+
+            .eltdf-blog-list > li {
+                width: 50%;
+
+                &:nth-child(3n+1) {
+                    clear: none;
+                }
+
+                &:nth-child(2n+1) {
+                    clear: both;
+                }
+            }
+        }
+    }
+
+    .eltdf-blog-list-holder.eltdf-masonry {
+
+        &.eltdf-blog-list-columns-3,
+        &.eltdf-blog-list-columns-4 {
+
+            .eltdf-blog-list > li,
+            .eltdf-blog-masonry-grid-sizer {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $ipad-portrait) {
+
+    .eltdf-blog-list-holder:not(.eltdf-masonry) {
+
+        .eltdf-blog-list > li {
+            width: 100% !important;
+            float: none;
+        }
+    }
+
+    .eltdf-blog-list-holder.eltdf-masonry {
+
+        .eltdf-blog-list > li,
+        .eltdf-blog-masonry-grid-sizer {
+            width: 100% !important;
+        }
+
+        .eltdf-blog-masonry-grid-gutter {
+            width: 0 !important;
+        }
+    }
+}
+/* ==========================================================================
+   Blog List shortcode responsive style - end
+   ========================================================================== */

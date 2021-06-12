@@ -1,0 +1,63 @@
+/* ==========================================================================
+   WooCommerce Onsale and Out of Stock styles - begin
+   ========================================================================== */
+
+.woocommerce {
+
+	.eltdf-onsale,
+	.eltdf-out-of-stock {
+		position: absolute;
+		display: block;
+		top: 15px;
+		width: 54px;
+		height: 54px;
+		color: #fff;
+		font-family: $default-text-font;
+		font-size: 18px;
+		line-height: 54px;
+		font-weight: 300;
+		border-radius: 4em;
+		text-align: center;
+		z-index: 100;
+		@include eltdfTransform(translateZ(0));
+		@include eltdfBoxSizing(border-box);
+	}
+
+	.eltdf-onsale {
+		left: 15px;
+		background-color: $first-main-color;
+	}
+
+	.eltdf-out-of-stock {
+		right: 15px;
+		font-size: 14px;
+		line-height: 16px;
+		padding: 11px 0;
+		background-color: $default-heading-color;
+	}
+}
+
+.eltdf-woo-single-page {
+
+	.eltdf-single-product-content {
+
+		.eltdf-out-of-stock,
+		.eltdf-new-product {
+			right: 33px;
+		}
+	}
+
+	&.eltdf-woo-single-thumb-on-left-side {
+
+		.eltdf-single-product-content {
+
+			.eltdf-onsale {
+				left: 129px;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   WooCommerce Onsale and Out of Stock styles - end
+   ========================================================================== */

@@ -1,0 +1,21 @@
+/* ==========================================================================
+#Sticky Nav header styles - start
+========================================================================== */
+.eltdf-sticky-header {
+
+    body[class*='eltdf-sticky'] & .eltdf-search-opener .eltdf-search-opener-wrapper {
+        top: 0;
+        @include eltdfTransform(none);
+    }
+}
+
+.eltdf-boxed .eltdf-sticky-header .eltdf-drop-down .wide .second{
+    margin-left: -25px;
+    margin-right: -25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+/* ==========================================================================
+#Sticky Nav header styles - end
+========================================================================== */

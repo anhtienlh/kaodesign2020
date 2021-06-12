@@ -1,0 +1,340 @@
+/* Blog list responsive layout - start
+====================================================================== */
+
+// Settings
+
+$gap-in-pixels: 50;
+$sidebar-content-gap-in-pixels: 84;
+$display-responsive-settings: (
+		1920: (
+				eltdf-blog-type-masonry: (number-of-columns: 3, number-of-columns-with-sidebar: 2, active-display-width-in-pixels: 1300),
+				eltdf-masonry-full-width: (number-of-columns: 4, number-of-columns-with-sidebar: 3, active-display-width-in-pixels: full, container-gap-in-pixels: 142)
+		),
+		1440: (
+				eltdf-masonry-full-width: (number-of-columns: 3, number-of-columns-with-sidebar: 2, active-display-width-in-pixels: full, container-gap-in-pixels: 142)
+		),
+		1280: (
+				eltdf-blog-type-masonry: (number-of-columns: 3, number-of-columns-with-sidebar: 2, active-display-width-in-pixels: 1200),
+				eltdf-masonry-full-width: (number-of-columns: 3, number-of-columns-with-sidebar: 2, active-display-width-in-pixels: full, container-gap-in-pixels: 142)
+		),
+		1200: (
+				eltdf-blog-type-masonry: (number-of-columns: 3, number-of-columns-with-sidebar: 2, active-display-width-in-pixels: 950),
+				eltdf-masonry-full-width: (number-of-columns: 2, number-of-columns-with-sidebar: 1, active-display-width-in-pixels: full, container-gap-in-pixels: 142)
+		),
+		1024: (
+				eltdf-blog-type-masonry: (number-of-columns: 2, number-of-columns-with-sidebar: 2, sidebar-rendered: false, active-display-width-in-pixels: 768),
+				eltdf-masonry-full-width: (number-of-columns: 2, number-of-columns-with-sidebar: 2, sidebar-rendered: false, active-display-width-in-pixels: full, container-gap-in-pixels: 50)
+		),
+		768: (
+				eltdf-blog-type-masonry: (number-of-columns: 1, active-display-width-in-pixels: 600, force-styles: true),
+				eltdf-masonry-full-width: (number-of-columns: 1, active-display-width-in-pixels: full, force-styles: true, container-gap-in-pixels: 50)
+		),
+);
+
+// Rendering
+
+@mixin blog-list-responsive-layout($display, $settings) {
+
+	.eltdf-blog-holder {
+
+		@each $template, $options in $settings {
+
+			&.#{$template} {
+
+				$style-suffix: '';
+				@if map-has-key($options, force-styles) and map-get($options, force-styles) == true {
+					$style-suffix: ' !important';
+				}
+
+				// No Sidebar
+				$columns-no: 3;
+				$active-width: 1100;
+
+				@if map-has-key($options, number-of-columns) {
+					$columns-no: map-get($options, number-of-columns);
+				}
+				@if map-has-key($options, active-display-width-in-pixels) {
+					$active-width: map-get($options, active-display-width-in-pixels);
+				}
+
+				@if $active-width == full {
+					$active-width: $display - 2 * map-get($options, container-gap-in-pixels);
+				}
+
+				article,
+				.eltdf-blog-masonry-grid-sizer {
+					width: (((($active-width - ($columns-no - 1) * $gap-in-pixels) / $columns-no) / $active-width) * 100) * 1% #{$style-suffix};
+				}
+
+				.eltdf-blog-masonry-grid-gutter {
+					width: (($gap-in-pixels / $active-width) * 100) * 1% #{$style-suffix};
+				}
+
+				// With Sidebar
+				@if map-has-key($options, number-of-columns-with-sidebar) {
+
+					$columns-no-with-sidebar: map-get($options, number-of-columns-with-sidebar);
+					$active-width-with-sidebar: $active-width * 2 / 3 - $sidebar-content-gap-in-pixels / 2;
+
+					@if map-has-key($options, sidebar-rendered) and map-get($options, sidebar-rendered) == false {
+						$active-width-with-sidebar: $active-width;
+					}
+
+					.eltdf-content-next-to-sidebar & {
+
+						article,
+						.eltdf-blog-masonry-grid-sizer {
+							width: (((($active-width-with-sidebar - ($columns-no-with-sidebar - 1) * $gap-in-pixels) / $columns-no-with-sidebar) / $active-width-with-sidebar) * 100) * 1% #{$style-suffix};
+						}
+
+						.eltdf-blog-masonry-grid-gutter {
+							width: (($gap-in-pixels / $active-width-with-sidebar) * 100) * 1% #{$style-suffix};
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@each $display, $settings in $display-responsive-settings {
+	@if $display != 1920 {
+		$sidebar-content-gap-in-pixels: 42;
+		@media only screen and (max-width: $display * 1px) {
+			@include blog-list-responsive-layout ($display, $settings);
+		}
+	} @else {
+		@include blog-list-responsive-layout ($display, $settings);
+	}
+}
+
+/* Blog list responsive layout - end
+====================================================================== */
+
+@include laptop-landscape-large {
+
+}
+
+@include laptop-landscape {
+
+	.eltdf-blog-holder {
+
+		&:not(.eltdf-blog-type-masonry) {
+
+			article {
+
+				&.format-link {
+
+					.eltdf-link-content {
+
+						.eltdf-link-text {
+							padding: 71px 95px 67px;
+						}
+					}
+				}
+
+				&.format-quote {
+
+					.eltdf-quote-content {
+
+						.eltdf-quote-text {
+							padding: 71px 95px 67px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@include ipad-landscape {
+
+	.eltdf-blog-holder {
+
+		&:not(.eltdf-blog-type-masonry) {
+
+			article {
+
+				&.format-link {
+
+					.eltdf-link-content {
+
+						.eltdf-link-text {
+							padding: 71px 75px 67px;
+						}
+					}
+				}
+
+				&.format-quote {
+
+					.eltdf-quote-content {
+
+						.eltdf-quote-text {
+							padding: 71px 75px 67px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.page-template-blog-masonry-full-width .eltdf-full-width-inner {
+		padding: 0 6%;
+	}
+
+}
+
+@include ipad-portrait {
+
+	.eltdf-blog-holder {
+
+		&:not(.eltdf-blog-type-masonry) {
+
+			article {
+
+				&.format-link {
+
+					.eltdf-link-content {
+
+						.eltdf-link-text {
+							padding: 71px 55px 67px;
+						}
+					}
+				}
+
+				&.format-quote {
+
+					.eltdf-quote-content {
+
+						.eltdf-quote-text {
+							padding: 71px 55px 67px;
+						}
+					}
+				}
+			}
+		}
+
+		&.eltdf-blog-single {
+
+			article {
+
+				.eltdf-single-tags-holder,
+				.eltdf-blog-single-share {
+					display: block;
+					float: none;
+					padding: 0 0 10px;
+				}
+			}
+
+			.eltdf-comment-holder {
+
+				.eltdf-comment-list {
+
+					.children {
+						padding: 0 0 0 60px;
+					}
+				}
+			}
+		}
+	}
+
+	.eltdf-column1 .eltdf-related-posts-holder .eltdf-related-post,
+	.eltdf-column2 .eltdf-related-posts-holder .eltdf-related-post,
+	.eltdf-related-posts-holder .eltdf-related-post {
+		width: 50%;
+	}
+}
+
+@include phone-landscape {
+
+	.eltdf-blog-holder {
+
+		.eltdf-author-description .eltdf-author-description-content {
+			padding: 0 30px;
+		}
+
+		&:not(.eltdf-blog-type-masonry) {
+
+			article {
+
+				&.format-link {
+
+					.eltdf-link-content {
+
+						.eltdf-link-text {
+							padding: 71px 30px 67px;
+						}
+					}
+				}
+
+				&.format-quote {
+
+					.eltdf-quote-content {
+
+						.eltdf-quote-text {
+							padding: 71px 30px 67px;
+						}
+					}
+				}
+			}
+		}
+
+		&.eltdf-blog-single {
+
+			.eltdf-comment-holder {
+
+				.eltdf-comment-list {
+
+					.children {
+						padding: 0 0 0 30px;
+					}
+				}
+
+				.eltdf-comment-text {
+
+					.replay,
+					.comment-reply-link,
+					.comment-edit-link {
+						margin: 0 10px 0 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include phone-portrait {
+
+	.eltdf-blog-holder {
+
+		&.eltdf-blog-single {
+
+			.eltdf-related-posts-holder {
+
+				.eltdf-related-post {
+					width: 100% !important;
+				}
+			}
+
+			.eltdf-comment-holder {
+
+				.eltdf-comment-list {
+
+					.children {
+						padding: 0 0 0 20px;
+					}
+				}
+
+				.eltdf-comment-image {
+					float: none;
+				}
+
+				.eltdf-comment-text {
+					padding: 20px 0 0;
+					min-height: inherit;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,47 @@
+/* ==========================================================================
+# Search template responsive style - begin
+========================================================================== */
+
+@media only screen and (max-width: $ipad-landscape) {
+
+    .search .eltdf-content .eltdf-content-inner > .eltdf-container > .eltdf-container-inner {
+        padding: 40px 0 0;
+    }
+
+    .eltdf-search-page-holder {
+
+        article {
+
+            .eltdf-post-image {
+                width: 82px;
+            }
+
+            .eltdf-post-title-area {
+                padding: 0 0 0 108px;
+                min-height: 82px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $phone-landscape) {
+
+    .eltdf-search-page-holder {
+
+        article {
+
+            .eltdf-post-image {
+                width: 72px;
+            }
+
+            .eltdf-post-title-area {
+                padding: 0 0 0 92px;
+                min-height: 72px;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+# Search template responsive style - end
+========================================================================== */

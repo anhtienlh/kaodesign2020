@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Portfolio Single Big Slider style - begin
+   ========================================================================== */
+
+.big-slider {
+	margin: 0 0 70px;
+
+    .eltdf-big-image-holder {
+        margin: 0 0 52px;
+    }
+
+    .eltdf-ps-navigation {
+    	margin: 33px 0 0;
+    }
+}
+
+@include ipad-landscape {
+
+	.big-slider .eltdf-portfolio-info-holder {
+		padding: 0 !important;
+	}
+}
+/* ==========================================================================
+   Portfolio Single Small Slider style - end
+   ========================================================================== */

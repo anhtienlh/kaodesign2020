@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Pricing Tables shortcode responsive style - begin
+   ========================================================================== */
+
+@include laptop-landscape {
+	
+	.eltdf-pricing-tables {
+		
+		$pricing_table_columns: ('eltdf-four-columns', 'eltdf-five-columns');
+		@for $i from 0 to length($pricing_table_columns) {
+			&.#{nth($pricing_table_columns, $i+1)} {
+				$column_width: 100%/3;
+				
+				.eltdf-price-table {
+					width: $column_width;
+					
+					@media only screen and (min-width: $ipad-portrait-plus-pixel) {
+						
+						&:nth-child(3n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include ipad-landscape {
+	
+	.eltdf-price-table {
+		
+		.eltdf-pt-inner {
+			
+			ul {
+				
+				li {
+					padding: 12px 20px;
+					
+					&.eltdf-pt-title-holder {
+						
+						.eltdf-pt-title {
+							padding: 17px 0 27px;
+						}
+					}
+					
+					&.eltdf-pt-prices {
+						padding: 22px 10px 0;
+					}
+					
+					&.eltdf-pt-content {
+						padding: 12px 10px;
+					}
+					
+					&.eltdf-pt-button {
+						padding: 18px 15px 50px;
+					}
+				}
+			}
+		}
+	}
+
+	.eltdf-pricing-tables {
+
+		$pricing_table_columns: ('eltdf-three-columns', 'eltdf-four-columns', 'eltdf-five-columns');
+		@for $i from 0 to length($pricing_table_columns) {
+			&.#{nth($pricing_table_columns, $i+1)} {
+				$column_width: 100%/2;
+
+				.eltdf-price-table {
+					width: $column_width;
+
+					&:nth-child(2n+1) {
+						clear: both;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include phone-landscape {
+	
+	.eltdf-pricing-tables {
+		$pricing_table_columns: ('eltdf-two-columns', 'eltdf-three-columns', 'eltdf-four-columns', 'eltdf-five-columns');
+		@for $i from 0 to length($pricing_table_columns) {
+			&.#{nth($pricing_table_columns, $i+1)} {
+				
+				.eltdf-price-table {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Pricing Tables shortcode responsive style - end
+   ========================================================================== */

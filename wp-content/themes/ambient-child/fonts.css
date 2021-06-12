@@ -1,0 +1,49 @@
+/*
+kiendx was here :))
+*/
+
+@font-face {
+  font-family: "GoogleSans-Medium";
+  src: url("fonts/GoogleSans-Medium.otf");
+  font-size: 30px;
+}
+@font-face {
+  font-family: "SVN-Helga";
+  src: url("fonts/SVN-Helga.otf");
+  font-size: 2.5rem;
+}
+@font-face {
+  font-family: "GoogleSans-Bold";
+  src: url("fonts/GoogleSans-Bold.otf");
+  font-size: 30px;
+}
+@font-face {
+  font-family: "GoogleSans-Regular";
+  src: url("fonts/GoogleSans-Regular.otf");
+  font-size: 30px;
+}
+@font-face {
+  font-family: "ArchivoNarrow-Medium";
+  src: url("fonts/ArchivoNarrow-Medium.ttf");
+  font-size: 30px;
+}
+@font-face {
+  font-family: "Archivo-Regular";
+  src: url("fonts/Archivo-Regular.ttf");
+  font-size: 30px;
+}
+@font-face {
+  font-family: "ArchivoNarrow-Bold";
+  src: url("fonts/ArchivoNarrow-Bold.ttf");
+  font-size: 30px;
+}
+@font-face {
+  font-family: "ArchivoNarrow-Regular";
+  src: url("fonts/ArchivoNarrow-Regular.ttf");
+  font-size: 30px;
+}
+@font-face {
+  font-family: "GoogleSans-Light";
+  src: url("fonts/GoogleSans-Light.ttf");
+  font-size: 30px;
+}

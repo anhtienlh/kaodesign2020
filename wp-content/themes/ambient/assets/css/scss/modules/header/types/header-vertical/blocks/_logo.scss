@@ -1,0 +1,21 @@
+.eltdf-header-vertical {
+
+    .eltdf-logo-wrapper {
+        @include eltdfRelativeHolderLayout();
+        z-index: 100;
+
+        a {
+            display: block;
+            position: relative;
+            height: 100%;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            max-height: 100%;
+
+            @include eltdfTransition(opacity 0.3s ease);
+        }
+    }
+}

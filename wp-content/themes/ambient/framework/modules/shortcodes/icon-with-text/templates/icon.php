@@ -1,0 +1,1 @@
+<?php echo ambient_elated_execute_shortcode('eltdf_icon', $icon_parameters); ?>

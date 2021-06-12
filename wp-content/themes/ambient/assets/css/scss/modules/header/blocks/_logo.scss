@@ -1,0 +1,31 @@
+.eltdf-logo-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+
+    a {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 100%;
+
+        img {
+            height: 100%;
+            width: auto;
+            @include eltdfTransition(opacity 0.2s ease);
+
+            &.eltdf-normal-logo {
+                opacity: 1;
+            }
+
+            &.eltdf-dark-logo {
+                opacity: 0;
+                @include eltdfTransform(translateY(-100%));
+            }
+
+            &.eltdf-light-logo {
+                opacity: 0;
+                @include eltdfTransform(translateY(-200%));
+            }
+        }
+    }
+}

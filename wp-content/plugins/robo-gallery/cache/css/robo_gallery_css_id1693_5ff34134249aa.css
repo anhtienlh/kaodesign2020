@@ -1,0 +1,16 @@
+.robo-gallery-wrap-id1693:not(#no-robo-galery) .image-with-dimensions {
+  background-color: #ea9f2b; }
+
+.robo-gallery-wrap-id1693:not(#no-robo-galery) .rbs-img-container {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+
+.robo-gallery-wrap-id1693:not(#no-robo-galery) .thumbnail-overlay {
+  background: rgba(7, 7, 7, 0.5); }
+
+.robo-lightbox-id1693:not(#no-robo-galery) .mfp-bottom-bar .mfp-title, .robo-lightbox-id1693:not(#no-robo-galery) .mfp-bottom-bar .mfp-counter {
+  color: rgba(34, 25, 25, 0.4); }
+
+.robo-lightbox-id1693:not(#no-robo-galery) .mfp-ready.mfp-bg {
+  background-color: rgba(11, 11, 11, 0.8); }

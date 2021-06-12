@@ -1,0 +1,39 @@
+/*
+Theme Name: Ambient Child | Shared by VestaThemes.com
+Theme URI: https://ambient.qodeinteractive.com/landing/
+Description: A child theme of Ambient Theme
+Author: Elated Themes
+Author URI: http://themeforest.net/user/elated-themes
+Version: 1.0.2
+Text Domain: ambient
+Template: ambient
+*/
+@import "fonts.css";
+@import url(https://allfont.net/allfont.css?fonts=agency-fb);
+
+/* BEGIN customized HEADER */
+@import "kao-header.css";
+/* END customized HEADER */
+
+.contact-text-1 {
+  font-family: GoogleSans-Medium !important;
+  font-size: 33px !important;
+  color: rgb(254, 254, 254) !important;
+  line-height: 160%;
+}
+
+.contact-button button{
+  font-family: GoogleSans-Bold !important;
+  font-size: 37px !important;
+  color: black !important;
+  border-style: solid !important;
+    border-radius: 50px !important;
+    border-width: 3px !important;
+    border-color: white !important;
+    background-color: rgb(241, 177, 43) !important;
+}
+
+.eltdf-drop-down .narrow .second .inner ul {
+    background-color: black !important;
+    opacity: 0.7;
+}

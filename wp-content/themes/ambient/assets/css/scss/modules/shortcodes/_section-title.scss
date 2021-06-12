@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Section Title shortcode styles - begin
+   ========================================================================== */
+
+.eltdf-section-title-holder {
+    @include eltdfRelativeHolderLayout();
+    
+    .eltdf-st-title {
+	    display: block;
+        margin: 0;
+    }
+    
+    .eltdf-st-text {
+	    display: block;
+        margin: 14px 0 0;
+    }
+}
+/* ==========================================================================
+   Section Title shortcode styles - end
+   ========================================================================== */
+
+

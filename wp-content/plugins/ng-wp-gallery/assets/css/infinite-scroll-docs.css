@@ -1,0 +1,70 @@
+/* NG Gallery Css */
+.container{
+  max-width:100%;
+}
+.image-grid__item, .image-grid__col-sizer {
+  width: 32%;
+}
+.image-grid__gutter-sizer {
+  width: 2%;
+}
+.image-grid__item {
+  margin-bottom: 20px;
+  float: left;
+}
+.image-grid__image {
+  display: block;
+  max-width: 100%;
+  margin:0 auto;
+  width:100%;
+}
+.scroller-status {
+  display: none;
+  padding: 20px 0;
+}
+.loader-ellips {
+  font-size: 20px;
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 10px auto;
+}
+
+.loader-ellips__dot:nth-child(1), .loader-ellips__dot:nth-child(2) {
+  left: 0;
+}
+.loader-ellips__dot:nth-child(3) {
+  left: 1.5em;
+}
+.loader-ellips__dot:nth-child(4) {
+  left: 3em;
+}
+.loader-ellips__dot {
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: #555;
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.nwg-border-radius{
+  border-radius: 5px 5px 5px 5px;
+}
+.nwg-border{
+  border:2px solid #dddddd;
+}
+
+@media only screen and (max-width: 600px) {
+  .image-grid__item, .image-grid__col-sizer {
+    width: 100%;
+    position: relative!important;
+    top: 0!important;
+  }
+  .ngw_gallery_image_grid{
+    height:100%!important;
+  }
+}

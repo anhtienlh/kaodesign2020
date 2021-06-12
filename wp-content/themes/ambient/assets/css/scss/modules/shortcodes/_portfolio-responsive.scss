@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Portfolio shortcode responsive style - begin
+   ========================================================================== */
+
+@media only screen and (max-width: $laptop-landscape-large) {
+
+	.eltdf-portfolio-list-holder {
+
+		&.eltdf-pl-masonry {
+
+			$masonry_columns_number: ('five');
+
+			@for $i from 0 to length($masonry_columns_number) {
+				&.eltdf-pl-#{nth($masonry_columns_number,$i+1)}-columns {
+					$column_width: 100%/4;
+
+					article,
+					.eltdf-pl-grid-sizer {
+						width: $column_width;
+					}
+
+					article {
+
+						&.eltdf-pl-masonry-large-width,
+						&.eltdf-pl-masonry-large-width-height {
+							width: $column_width * 2;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include ipad-portrait {
+	.eltdf-portfolio-list-holder {
+
+		&.eltdf-pl-filter-position-left {
+			.eltdf-pl-filter-holder {
+				float: none !important;
+				width: 100% !important;
+				margin-bottom: 35px;
+			}
+			& > .eltdf-pl-inner {
+				float: none !important;
+				width: initial !important;
+			}
+
+			.eltdf-portfolio-filter-holder {
+				float: none !important;
+				width: 100% !important;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $laptop-landscape) {
+
+	.eltdf-portfolio-list-holder {
+
+		&.eltdf-pl-gallery {
+
+			$gallery_columns_number: ('four', 'five');
+
+			@for $i from 0 to length($gallery_columns_number) {
+				&.eltdf-pl-#{nth($gallery_columns_number,$i+1)}-columns {
+					$gallery_item_size: 100% / 3;
+
+					article,
+					.eltdf-pl-grid-sizer {
+						width: $gallery_item_size;
+					}
+
+					@media only screen and (min-width: $ipad-landscape-plus-pixel) {
+
+						article {
+
+							&:nth-child(3n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.eltdf-pl-masonry {
+
+			$masonry_columns_number: ('four', 'five');
+
+			@for $i from 0 to length($masonry_columns_number) {
+				&.eltdf-pl-#{nth($masonry_columns_number,$i+1)}-columns {
+					$column_width: 100% / 3;
+
+					article,
+					.eltdf-pl-grid-sizer {
+						width: $column_width;
+					}
+
+					article {
+
+						&.eltdf-pl-masonry-large-width,
+						&.eltdf-pl-masonry-large-width-height {
+							width: $column_width * 2;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $ipad-landscape) {
+
+	.eltdf-portfolio-list-holder {
+
+		&.eltdf-pl-gallery {
+
+			$gallery_columns_space_label: ('large');
+			$gallery_columns_space: (15);
+
+			@for $i from 0 to length($gallery_columns_space_label) {
+				&.eltdf-pl-#{nth($gallery_columns_space_label,$i+1)}-space {
+					$gallery_item_space: nth($gallery_columns_space, $i+1);
+					$gallery_item_bottom_margin: $gallery_item_space * 2;
+
+					.eltdf-pl-inner {
+						margin: 0 -#{$gallery_item_space}px;
+					}
+
+					article {
+						padding: 0 #{$gallery_item_space}px;
+						margin: 0 0 #{$gallery_item_bottom_margin}px;
+					}
+				}
+			}
+
+			$gallery_columns_number: ('three', 'four', 'five');
+
+			@for $i from 0 to length($gallery_columns_number) {
+				&.eltdf-pl-#{nth($gallery_columns_number,$i+1)}-columns {
+
+					article,
+					.eltdf-pl-grid-sizer {
+						width: 50%;
+					}
+
+					@media only screen and (min-width: $phone-landscape-plus-pixel) {
+
+						article {
+
+							&:nth-child(2n+1) {
+								clear: both;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.eltdf-pl-masonry {
+
+			$masonry_columns_number: ('three', 'four', 'five');
+
+			@for $i from 0 to length($masonry_columns_number) {
+				&.eltdf-pl-#{nth($masonry_columns_number,$i+1)}-columns {
+
+					article,
+					.eltdf-pl-grid-sizer {
+						width: 50%;
+					}
+
+					article {
+
+						&.eltdf-pl-masonry-large-width,
+						&.eltdf-pl-masonry-large-width-height {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $phone-landscape) {
+
+	.eltdf-portfolio-list-holder {
+
+		&.eltdf-pl-gallery {
+
+			article,
+			.eltdf-pl-grid-sizer {
+				width: 100% !important; // !important is set to override all other stronger selectors
+			}
+		}
+
+		&.eltdf-pl-masonry {
+
+			$masonry_columns_number: ('two', 'three', 'four', 'five');
+
+			@for $i from 0 to length($masonry_columns_number) {
+				&.eltdf-pl-#{nth($masonry_columns_number,$i+1)}-columns {
+
+					article,
+					.eltdf-pl-grid-sizer {
+						width: 100%;
+					}
+				}
+			}
+
+			article.eltdf-pl-masonry-large-width {
+				.eltdf-pli-image {
+					height: 100%;
+
+					img {
+						position: relative;
+						height: 100%;
+						width: auto;
+						max-width: none;
+						left: 50%;
+						@include eltdfTransform(translateX(-50%));
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Portfolio shortcode responsive style - end
+   ========================================================================== */

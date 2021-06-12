@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Tabs shortcode style - begin
+   ========================================================================== */
+
+.eltdf-tabs {
+    
+    .eltdf-tabs-nav {
+        display: block;
+        position: relative;
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        @include eltdfBoxSizing(border-box);
+        
+        li {
+	        float: left;
+            margin: 0;
+	        padding: 0;
+            
+            a {
+                position: relative;
+                display: inline-block;
+	            vertical-align: middle;
+	            padding: 10px 20px;
+                color: $default-heading-color;
+	            font-size: 12px;
+	            line-height: 30px;
+                font-weight: 600;
+	            letter-spacing: 1px;
+	            background-color: transparent;
+	            border: 1px solid $default-border-color;
+                @include eltdfBoxSizing(border-box);
+	            @include eltdfTransition(color .2s ease-out, background-color .2s ease-out, border-color .2s ease-out);
+            }
+            
+            &.ui-state-active a,
+            &.ui-state-hover a {
+                color: #fff;
+                background-color: $first-main-color;
+	            border-color: $first-main-color;
+            }
+        }
+    }
+    
+    .eltdf-tab-container {
+        position: relative;
+	    padding: 21px 0 0;
+        @include eltdfBoxSizing(border-box);
+	    
+	    p {
+		    margin: 0;
+	    }
+    }
+}
+/* ==========================================================================
+   Tabs shortcode style - end
+   ========================================================================== */
