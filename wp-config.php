@@ -21,13 +21,13 @@ define('WP_AUTO_UPDATE_CORE', 'minor');// This setting is required to make sure 
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'u764288695_Kaodesign2020' );
+define( 'DB_NAME', 'u690714913_Bhqlc' );
 
 /** MySQL database username */
-define( 'DB_USER', 'u764288695_Kaodesign2020' );
+define( 'DB_USER', 'u690714913_8EHN9' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'Kaodesign2020' );
+define( 'DB_PASSWORD', 'u690714913_Bhqlc' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'localhost' );
